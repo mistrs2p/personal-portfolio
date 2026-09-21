@@ -14,7 +14,7 @@ import {
     CardContent,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import ProjectGallery from "@/components/projects/ProjectGallery";
 import { projects } from "@/data/projects";
 
 export default function ProjectDetails() {
@@ -217,6 +217,12 @@ export default function ProjectDetails() {
                             />
                         </TabsContent>
                     </Tabs>
+                    <div className="mt-14">
+                        <ProjectGallery
+                            screenshots={project.screenshots}
+                            gifs={project.gifs}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
