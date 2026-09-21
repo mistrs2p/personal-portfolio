@@ -1,0 +1,262 @@
+export type ProjectStatus =
+  | "active"
+  | "completed"
+  | "production-ready"
+  | "coming-soon";
+
+export interface Project {
+  slug: string;
+  title: string;
+  category: string;
+  tagline: string;
+  description: string;
+
+  technologies: string[];
+
+  features: string[];
+  architecture: string[];
+  engineeringDecisions: string[];
+  challenges: string[];
+
+  screenshots: string[];
+  gifs: string[];
+
+  github?: string;
+  liveDemo?: string;
+
+  status: ProjectStatus;
+  featured: boolean;
+}
+
+export const projects: Project[] = [
+  {
+    slug: "neko",
+    title: "Neko Management Platform",
+    category: "Enterprise Frontend",
+    tagline: "Large-scale multi-module management platform",
+    description:
+      "A large-scale enterprise management platform covering tasks, follow-ups, programs, forms, calendar, letters, meetings, and AI-powered capabilities.",
+
+    technologies: [
+      "React",
+      "Vue.js",
+      "TypeScript",
+      "Mantine",
+      "AG Grid",
+      "REST API",
+      "AI Integration",
+      "Localization",
+    ],
+
+    features: [
+      "Custom Form Generator",
+      "Program Designer",
+      "Task & Follow-up Management",
+      "Calendar",
+      "Dynamic Forms",
+      "Form Actions",
+      "AI Integration",
+      "Server-side Data Operations",
+      "Localization",
+    ],
+
+    architecture: [
+      "Repository Pattern",
+      "Reusable Component Architecture",
+      "Server-side Data Operations",
+    ],
+
+    engineeringDecisions: [
+      "Frontend migration from Vue.js to React",
+      "Repository-based API communication layer",
+      "Reusable and configurable Form Generator",
+      "Server-side table operations with AG Grid",
+    ],
+
+    challenges: [],
+
+    screenshots: [],
+    gifs: [],
+
+    status: "active",
+    featured: true,
+  },
+
+  {
+    slug: "pomodoro",
+    title: "Pomodoro App",
+    category: "Full-Stack",
+    tagline: "Productivity and time management application",
+    description:
+      "A full-stack productivity application with a dedicated Next.js frontend and NestJS backend.",
+
+    technologies: [
+      "Next.js",
+      "NestJS",
+      "Node.js",
+      "TypeScript",
+      "Authentication",
+      "2FA",
+      "Authenticator",
+    ],
+
+    features: [
+      "Pomodoro Timer",
+      "Authentication",
+      "Two-Factor Authentication",
+      "Authenticator Support",
+    ],
+
+    architecture: [
+      "Dedicated Frontend",
+      "Dedicated Backend",
+      "API-based Architecture",
+    ],
+
+    engineeringDecisions: [],
+
+    challenges: [],
+
+    screenshots: [],
+    gifs: [],
+
+    github: "https://github.com/mistrs2p/pomodoro-nest",
+
+    status: "active",
+    featured: true,
+  },
+
+  {
+    slug: "ketabdaneh",
+    title: "Ketabdaneh",
+    category: "Full-Stack / Systems",
+    tagline: "Branch operations management system",
+    description:
+      "A branch operations management system designed to organize people, events, assignments, tasks, workflows, and operational visibility.",
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+      "Redis",
+      "Docker",
+      "Caddy",
+    ],
+
+    features: [
+      "Authentication",
+      "RBAC",
+      "Events & Assignments",
+      "Calendar",
+      "Notifications",
+      "Background Jobs",
+      "Health Checks",
+      "Observability",
+      "Backup & Restore",
+      "CI/CD",
+      "Security Automation",
+      "Bilingual FA/EN UI",
+      "RTL/LTR",
+    ],
+
+    architecture: [
+      "Modular Monolith",
+      "Next.js + FastAPI + PostgreSQL",
+      "Redis Background Worker",
+      "Containerized Production Stack",
+    ],
+
+    engineeringDecisions: [
+      "Server-side authorization",
+      "Provider-agnostic notification layer",
+      "Bounded retry strategy with exponential backoff",
+      "Production-oriented container architecture",
+    ],
+
+    challenges: [],
+
+    screenshots: [],
+    gifs: [],
+
+    github: "https://github.com/mistrs2p/ketabdan-ms",
+
+    status: "production-ready",
+    featured: true,
+  },
+
+  {
+    slug: "ai-chat",
+    title: "AI Chat",
+    category: "AI / LLM",
+    tagline: "Multi-provider AI chat application",
+    description:
+      "An AI chat application supporting multiple LLM providers with conversation memory, streaming responses, and Markdown rendering.",
+
+    technologies: [
+      "LLM APIs",
+      "OpenRouter",
+      "Hugging Face",
+      "Gemini",
+      "Streaming",
+      "Markdown",
+      "Memory",
+    ],
+
+    features: [
+      "Multi-provider AI Integration",
+      "Conversation Memory",
+      "Streaming Responses",
+      "Markdown Rendering",
+    ],
+
+    architecture: [
+      "Provider-based AI Integration",
+      "Streaming Response Pipeline",
+    ],
+
+    engineeringDecisions: [],
+
+    challenges: [],
+
+    screenshots: [],
+    gifs: [],
+
+    github: "https://github.com/mistrs2p/Free-AI-Chatbot",
+
+    status: "completed",
+    featured: true,
+  },
+
+  {
+    slug: "rag",
+    title: "RAG / AI Engineering",
+    category: "AI Engineering",
+    tagline: "Exploring retrieval-augmented generation systems",
+    description:
+      "An ongoing exploration of document ingestion, chunking, embeddings, vector search, and LLM-powered applications.",
+
+    technologies: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "Embeddings",
+      "RAG",
+    ],
+
+    features: [],
+    architecture: [],
+
+    engineeringDecisions: [],
+    challenges: [],
+
+    screenshots: [],
+    gifs: [],
+
+    status: "coming-soon",
+    featured: false,
+  },
+];

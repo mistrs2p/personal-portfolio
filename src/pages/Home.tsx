@@ -12,7 +12,12 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
+import { motion } from "motion/react";
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/projects/ProjectCard";
+const featuredProjects = projects.filter(
+    (project) => project.featured,
+);
 const techStack = [
     "React",
     "Next.js",
@@ -23,33 +28,6 @@ const techStack = [
     "PostgreSQL",
     "Docker",
     "AI / LLM",
-];
-
-const projects = [
-    {
-        title: "Pomodoro App",
-        description:
-            "A full-stack productivity application with Next.js, NestJS, authentication, 2FA, and Authenticator support.",
-        tech: ["Next.js", "NestJS", "TypeScript"],
-        href: "/projects/pomodoro",
-        icon: "🍅",
-    },
-    {
-        title: "Ketabdaneh",
-        description:
-            "A branch operations management system built with Next.js, FastAPI, PostgreSQL, Redis, Docker, and Caddy.",
-        tech: ["Next.js", "FastAPI", "PostgreSQL"],
-        href: "/projects/ketabdaneh",
-        icon: "📚",
-    },
-    {
-        title: "AI Chat",
-        description:
-            "A multi-provider AI chat application with memory, streaming responses, Markdown, and LLM API integrations.",
-        tech: ["LLM APIs", "OpenRouter", "Streaming"],
-        href: "/projects/ai-chat",
-        icon: "🤖",
-    },
 ];
 
 const capabilities = [
@@ -93,11 +71,16 @@ export default function Home() {
             />
 
             {/* Glow */}
-            <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+            <div className="pointer-events-none absolute left-1/2 top-0 h-125 w-175 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
 
             <section className="relative mx-auto max-w-7xl px-6 pb-24 pt-20 lg:px-8 lg:pb-32 lg:pt-28">
                 <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
                     {/* Hero Content */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >Hero Content</motion.div>
                     <div>
                         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-400 backdrop-blur">
                             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
@@ -111,7 +94,7 @@ export default function Home() {
 
                             <h1 className="text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
                                 I build products
-                                <span className="block bg-gradient-to-r from-white via-blue-200 to-violet-400 bg-clip-text text-transparent">
+                                <span className="block bg-linear-to-r from-white via-blue-200 to-violet-400 bg-clip-text text-transparent">
                                     from idea to production.
                                 </span>
                             </h1>
@@ -168,7 +151,7 @@ export default function Home() {
                                 <Badge
                                     key={tech}
                                     variant="outline"
-                                    className="rounded-full border-white/10 bg-white/[0.03] px-3 py-1.5 text-zinc-400"
+                                    className="rounded-full border-white/10 bg-white/3 px-3 py-1.5 text-zinc-400"
                                 >
                                     {tech}
                                 </Badge>
@@ -178,10 +161,10 @@ export default function Home() {
 
                     {/* Hero Visual */}
                     <div className="relative mx-auto w-full max-w-md">
-                        <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-blue-500/15 via-violet-500/10 to-transparent blur-3xl" />
+                        <div className="absolute -inset-8 rounded-[40px] bg-linear-to-br from-blue-500/15 via-violet-500/10 to-transparent blur-3xl" />
 
                         <div className="relative rounded-[30px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl backdrop-blur-xl">
-                            <div className="rounded-[24px] border border-white/10 bg-black/30 p-5">
+                            <div className="rounded-3xl border border-white/10 bg-black/30 p-5">
                                 <div className="mb-5 flex items-center justify-between">
                                     <span className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
                                         Engineering Stack
@@ -197,7 +180,7 @@ export default function Home() {
                                         return (
                                             <div
                                                 key={item.title}
-                                                className="group flex gap-4 rounded-2xl border border-white/5 bg-white/[0.03] p-4 transition hover:border-white/10 hover:bg-white/[0.05]"
+                                                className="group flex gap-4 rounded-2xl border border-white/5 bg-white/3 p-4 transition hover:border-white/10 hover:bg-white/5"
                                             >
                                                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-blue-400">
                                                     <Icon className="h-5 w-5" />
@@ -226,7 +209,7 @@ export default function Home() {
             </section>
 
             {/* Featured Projects */}
-            <section className="relative border-y border-white/5 bg-white/[0.02]">
+            <section className="relative border-y border-white/5 bg-white/2">
                 <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
                     <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
                         <div>
@@ -258,55 +241,11 @@ export default function Home() {
                     </div>
 
                     <div className="mt-10 grid gap-5 lg:grid-cols-3">
-                        {projects.map((project) => (
-                            <Card
-                                key={project.title}
-                                className="group overflow-hidden rounded-3xl border-white/10 bg-zinc-950/60 transition duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-zinc-900/80"
-                            >
-                                <CardContent className="p-6">
-                                    <div className="mb-8 flex items-start justify-between">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl">
-                                            {project.icon}
-                                        </div>
-
-                                        <ArrowRight className="h-5 w-5 text-zinc-600 transition group-hover:translate-x-1 group-hover:text-blue-400" />
-                                    </div>
-
-                                    <h3 className="text-xl font-semibold text-white">
-                                        {project.title}
-                                    </h3>
-
-                                    <p className="mt-3 min-h-[80px] text-sm leading-6 text-zinc-500">
-                                        {project.description}
-                                    </p>
-
-                                    <div className="mt-5 flex flex-wrap gap-2">
-                                        {project.tech.map((tech) => (
-                                            <Badge
-                                                key={tech}
-                                                variant="secondary"
-                                                className="rounded-full bg-white/5 text-zinc-400 hover:bg-white/5"
-                                            >
-                                                {tech}
-                                            </Badge>
-                                        ))}
-                                    </div>
-
-
-                                    <Link
-                                        to={project.href}
-                                        className={buttonVariants({
-                                            variant: "outline",
-                                            size: "lg",
-                                            className:
-                                                "rounded-xl border-white/10 bg-white/5 text-white hover:bg-white/10",
-                                        })}
-                                    >
-                                        Explore case study
-                                        <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Link>
-                                </CardContent>
-                            </Card>
+                        {featuredProjects.slice(0, 3).map((project) => (
+                            <ProjectCard
+                                key={project.slug}
+                                project={project}
+                            />
                         ))}
                     </div>
                 </div>
@@ -344,7 +283,7 @@ export default function Home() {
                             ].map((item) => (
                                 <div
                                     key={item}
-                                    className="rounded-2xl border border-white/5 bg-white/[0.02] px-5 py-4 text-sm text-zinc-300"
+                                    className="rounded-2xl border border-white/5 bg-white/2 px-5 py-4 text-sm text-zinc-300"
                                 >
                                     {item}
                                 </div>
@@ -355,9 +294,9 @@ export default function Home() {
             </section>
 
             {/* Current Focus */}
-            <section className="border-t border-white/5 bg-gradient-to-b from-blue-500/[0.03] to-transparent">
+            <section className="border-t border-white/5 bg-linear-to-b from-blue-500/3 to-transparent">
                 <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-                    <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl sm:p-10 lg:p-12">
+                    <div className="rounded-4xl border border-white/10 bg-white/3 p-8 backdrop-blur-xl sm:p-10 lg:p-12">
                         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
                             <div>
                                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
