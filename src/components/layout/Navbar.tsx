@@ -34,7 +34,7 @@ export default function Navbar() {
 
                     <div className="hidden sm:block">
                         <div className="text-sm font-semibold tracking-tight text-white">
-                            Mahdi Mousavi
+                            Arayina
                         </div>
 
                         <div className="text-xs text-zinc-500">

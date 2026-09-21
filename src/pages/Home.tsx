@@ -10,11 +10,10 @@ import {
 import { Link } from "react-router";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 const featuredProjects = projects.filter(
     (project) => project.featured,
 );
@@ -131,8 +130,8 @@ export default function Home() {
                                 View Resume
                             </Link>
 
-                            <Link
-                                to="https://github.com/mistrs2p"
+                            <a
+                                href="https://github.com/mistrs2p"
                                 target="_blank"
                                 rel="noreferrer"
                                 className={buttonVariants({
@@ -142,8 +141,9 @@ export default function Home() {
                                         "rounded-xl border-white/10 bg-white/5 text-white hover:bg-white/10",
                                 })}
                             >
-                                View Resume
-                            </Link>
+                                <SiGithub className="mr-2 h-4 w-4" />
+                                GitHub
+                            </a>
                         </div>
 
                         <div className="mt-10 flex flex-wrap gap-2">
@@ -228,7 +228,7 @@ export default function Home() {
                         </div>
 
                         <Link
-                            to="/project"
+                            to="/projects"
                             className={buttonVariants({
                                 variant: "outline",
                                 size: "lg",

@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
                 <div>
                     <p className="text-sm font-medium text-white">
-                        Mahdi Mousavi
+                        Arayina
                     </p>
 
                     <p className="mt-1 text-xs text-zinc-600">
