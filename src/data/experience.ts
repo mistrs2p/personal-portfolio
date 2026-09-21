@@ -8,7 +8,7 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    company: "Neko Industry Management Company",
+    company: "Neco Industry Management Company",
     role: "Frontend Developer",
     period: "2020 – Present",
     highlights: [

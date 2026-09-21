@@ -15,6 +15,8 @@ import ProjectProblemSolution from "@/components/projects/ProjectProblemSolution
 import ProjectRole from "@/components/projects/ProjectRole";
 import ProjectScope from "@/components/projects/ProjectScope";
 
+import ProjectImpact from "@/components/projects/ProjectImpact";
+
 import { projects } from "@/data/projects";
 
 export default function ProjectDetails() {
@@ -63,6 +65,10 @@ export default function ProjectDetails() {
 
                 <div className="mt-6">
                     <ProjectProblemSolution project={project} />
+                </div>
+
+                <div className="mt-14">
+                    <ProjectImpact project={project} />
                 </div>
                 {/* Project Cover */}
                 <div className="mt-14">
