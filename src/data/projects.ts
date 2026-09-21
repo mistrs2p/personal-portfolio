@@ -35,84 +35,83 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-  slug: "neco",
-  title: "Neco Management Platform",
-  category: "Enterprise Frontend",
-  tagline: "Large-scale multi-module management platform",
+    slug: "neco",
+    title: "Neco Management Platform",
+    category: "Enterprise Frontend",
+    tagline: "Large-scale multi-module management platform",
 
-  description:
-    "A large-scale enterprise management platform covering tasks, follow-ups, programs, program design, forms, calendar, letters, meetings, and AI-powered capabilities.",
+    description:
+      "A large-scale enterprise management platform covering tasks, follow-ups, programs, program design, forms, calendar, letters, meetings, and AI-powered capabilities.",
 
-  role:
-    "Frontend Developer responsible for the development and maintenance of the frontend and participation in the evolution of core product architecture.",
+    role: "Frontend Developer responsible for the development and maintenance of the frontend and participation in the evolution of core product architecture.",
 
-  scope:
-    "A multi-module organizational platform designed to support a broad range of operational and management workflows.",
+    scope:
+      "A multi-module organizational platform designed to support a broad range of operational and management workflows.",
 
-  problem:
-    "The platform needed to support a growing number of business modules and complex workflows while keeping the frontend maintainable, reusable, and scalable.",
+    problem:
+      "The platform needed to support a growing number of business modules and complex workflows while keeping the frontend maintainable, reusable, and scalable.",
 
-  solution:
-    "A modular frontend architecture with reusable components, a repository-based API communication layer, configurable form generation, server-side data operations, and integrated AI capabilities.",
+    solution:
+      "A modular frontend architecture with reusable components, a repository-based API communication layer, configurable form generation, server-side data operations, and integrated AI capabilities.",
 
-  technologies: [
-    "React",
-    "Vue.js",
-    "TypeScript",
-    "Mantine",
-    "AG Grid",
-    "REST API",
-    "AI Integration",
-    "Localization",
-  ],
+    technologies: [
+      "React",
+      "Vue.js",
+      "TypeScript",
+      "Mantine",
+      "AG Grid",
+      "REST API",
+      "AI Integration",
+      "Localization",
+    ],
 
-  features: [
-    "Task & Follow-up Management",
-    "Programs",
-    "Program Designer",
-    "Custom Form Generator",
-    "Dynamic Forms",
-    "Form Actions",
-    "Calendar",
-    "Letters",
-    "Meetings",
-    "AI Integration",
-    "Localization",
-  ],
+    features: [
+      "Task & Follow-up Management",
+      "Programs",
+      "Program Designer",
+      "Custom Form Generator",
+      "Dynamic Forms",
+      "Form Actions",
+      "Calendar",
+      "Letters",
+      "Meetings",
+      "AI Integration",
+      "Localization",
+    ],
 
-  architecture: [
-    "Repository Pattern",
-    "Reusable Component Architecture",
-    "Server-side Data Operations",
-    "Modular Frontend Structure",
-  ],
+    architecture: [
+      "Repository Pattern",
+      "Reusable Component Architecture",
+      "Server-side Data Operations",
+      "Modular Frontend Structure",
+    ],
 
-  engineeringDecisions: [
-    "Frontend migration from Vue.js to React",
-    "Repository-based API communication layer",
-    "Reusable and configurable Form Generator",
-    "Server-side Search, Filter, Sort and Pagination with AG Grid",
-    "Development of reusable UI components",
-    "Integration of AI capabilities into the product",
-  ],
+    engineeringDecisions: [
+      "Frontend migration from Vue.js to React",
+      "Repository-based API communication layer",
+      "Reusable and configurable Form Generator",
+      "Server-side Search, Filter, Sort and Pagination with AG Grid",
+      "Development of reusable UI components",
+      "Integration of AI capabilities into the product",
+    ],
 
-  challenges: [
-    "Managing a large number of interconnected business modules",
-    "Keeping reusable components flexible without making them overly complex",
-    "Handling large datasets through server-side table operations",
-    "Supporting configurable and dynamic forms",
-    "Maintaining consistency while evolving the frontend architecture",
-  ],
+    challenges: [
+      "Managing a large number of interconnected business modules",
+      "Keeping reusable components flexible without making them overly complex",
+      "Handling large datasets through server-side table operations",
+      "Supporting configurable and dynamic forms",
+      "Maintaining consistency while evolving the frontend architecture",
+    ],
 
-  screenshots: [],
-  gifs: [],
+    screenshots: [],
+    gifs: [],
 
-  github: undefined,
-  liveDemo: undefined,
+    github: undefined,
+    liveDemo: undefined,
 
-  status: "active",
-  featured: true,
-}
+    status: "active",
+    featured: true,
+  },
 
   {
     slug: "pomodoro",

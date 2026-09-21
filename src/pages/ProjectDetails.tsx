@@ -67,9 +67,11 @@ export default function ProjectDetails() {
                     <ProjectProblemSolution project={project} />
                 </div>
 
-                <div className="mt-14">
-                    <ProjectImpact project={project} />
-                </div>
+                {project.slug === "neco" && (
+                    <div className="mt-14">
+                        <ProjectImpact project={project} />
+                    </div>
+                )}
                 {/* Project Cover */}
                 <div className="mt-14">
                     <div className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/60">

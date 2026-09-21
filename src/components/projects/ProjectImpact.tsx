@@ -39,7 +39,7 @@ const impactItems = [
     },
 ];
 
-export default function ProjectImpact({ب
+export default function ProjectImpact({
     project,
 }: ProjectImpactProps) {
     return (
