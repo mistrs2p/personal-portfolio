@@ -1,3 +1,11 @@
+import { useParams } from "react-router";
+
 export default function ProjectDetails() {
-    return <div>Project Details</div>;
+    const { slug } = useParams();
+
+    return (
+        <div className="p-10">
+            Project: {slug}
+        </div>
+    );
 }

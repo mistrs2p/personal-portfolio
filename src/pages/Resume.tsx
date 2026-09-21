@@ -1,3 +1,3 @@
 export default function Resume() {
-    return <div>Resume</div>;
+    return <div className="p-10">Resume</div>;
 }

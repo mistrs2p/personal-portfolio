@@ -1,13 +1,13 @@
 export default function Home() {
     return (
-        <section className="container mx-auto p-10">
-            <h1 className="text-4xl font-bold">
+        <section className="mx-auto max-w-7xl px-6 py-20">
+            <p className="mb-4 text-sm text-muted-foreground">
                 Senior Frontend & Full-Stack Developer
-            </h1>
-
-            <p className="mt-4">
-                Building modern web applications and AI-powered products.
             </p>
+
+            <h1 className="max-w-3xl text-5xl font-bold tracking-tight">
+                Building modern web applications and AI-powered products.
+            </h1>
         </section>
     );
 }
