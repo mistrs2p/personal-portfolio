@@ -11,6 +11,10 @@ import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectOverview from "@/components/projects/ProjectOverview";
 
+import ProjectProblemSolution from "@/components/projects/ProjectProblemSolution";
+import ProjectRole from "@/components/projects/ProjectRole";
+import ProjectScope from "@/components/projects/ProjectScope";
+
 import { projects } from "@/data/projects";
 
 export default function ProjectDetails() {
@@ -52,6 +56,14 @@ export default function ProjectDetails() {
 
                 <ProjectHero project={project} />
 
+                <div className="mt-10 grid gap-6 lg:grid-cols-2">
+                    <ProjectRole project={project} />
+                    <ProjectScope project={project} />
+                </div>
+
+                <div className="mt-6">
+                    <ProjectProblemSolution project={project} />
+                </div>
                 {/* Project Cover */}
                 <div className="mt-14">
                     <div className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/60">

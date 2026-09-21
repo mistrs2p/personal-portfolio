@@ -11,6 +11,11 @@ export interface Project {
   tagline: string;
   description: string;
 
+  role?: string;
+  scope?: string;
+  problem?: string;
+  solution?: string;
+
   technologies: string[];
 
   features: string[];
@@ -34,8 +39,19 @@ export const projects: Project[] = [
     title: "Neko Management Platform",
     category: "Enterprise Frontend",
     tagline: "Large-scale multi-module management platform",
+
     description:
-      "A large-scale enterprise management platform covering tasks, follow-ups, programs, forms, calendar, letters, meetings, and AI-powered capabilities.",
+      "A large-scale enterprise management platform covering tasks, follow-ups, programs, program design, forms, calendar, letters, meetings, and AI-powered capabilities.",
+
+    role: "Frontend Developer responsible for the development and maintenance of the frontend and participation in the evolution of core product architecture.",
+
+    scope:
+      "A multi-module organizational platform designed to support a broad range of operational and management workflows.",
+
+    problem: "",
+
+    solution:
+      "A modular frontend architecture with reusable components, a repository-based API communication layer, configurable form generation, server-side data operations, and integrated AI capabilities.",
 
     technologies: [
       "React",
@@ -49,14 +65,16 @@ export const projects: Project[] = [
     ],
 
     features: [
-      "Custom Form Generator",
-      "Program Designer",
       "Task & Follow-up Management",
-      "Calendar",
+      "Programs",
+      "Program Designer",
+      "Custom Form Generator",
       "Dynamic Forms",
       "Form Actions",
+      "Calendar",
+      "Letters",
+      "Meetings",
       "AI Integration",
-      "Server-side Data Operations",
       "Localization",
     ],
 
@@ -64,19 +82,25 @@ export const projects: Project[] = [
       "Repository Pattern",
       "Reusable Component Architecture",
       "Server-side Data Operations",
+      "Modular Frontend Structure",
     ],
 
     engineeringDecisions: [
       "Frontend migration from Vue.js to React",
       "Repository-based API communication layer",
       "Reusable and configurable Form Generator",
-      "Server-side table operations with AG Grid",
+      "Server-side Search, Filter, Sort and Pagination with AG Grid",
+      "Development of reusable UI components",
+      "Integration of AI capabilities into the product",
     ],
 
     challenges: [],
 
     screenshots: [],
     gifs: [],
+
+    github: undefined,
+    liveDemo: undefined,
 
     status: "active",
     featured: true,
