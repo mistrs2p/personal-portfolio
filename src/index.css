@@ -362,3 +362,58 @@ body {
   background: rgba(96, 165, 250, 0.3);
   color: white;
 }
+
+
+/* Light theme compatibility for legacy dark-first utility classes. */
+:root:not(.dark) [class~="text-white"] {
+  color: var(--foreground) !important;
+}
+
+:root:not(.dark) [class~="text-zinc-300"] {
+  color: color-mix(in srgb, var(--foreground) 82%, transparent) !important;
+}
+
+:root:not(.dark) [class~="text-zinc-400"],
+:root:not(.dark) [class~="text-zinc-500"] {
+  color: var(--muted-foreground) !important;
+}
+
+:root:not(.dark) [class~="text-zinc-600"] {
+  color: color-mix(in srgb, var(--muted-foreground) 82%, transparent) !important;
+}
+
+:root:not(.dark) [class~="border-white\/10"],
+:root:not(.dark) [class~="border-white\/20"] {
+  border-color: var(--border) !important;
+}
+
+:root:not(.dark) [class~="bg-white\/5"] {
+  background-color: color-mix(in srgb, var(--muted) 55%, transparent) !important;
+}
+
+:root:not(.dark) [class~="bg-white\/10"] {
+  background-color: var(--muted) !important;
+}
+
+:root:not(.dark) [class~="bg-white\/[0.02]"],
+:root:not(.dark) [class~="bg-white\/[0.03]"] {
+  background-color: color-mix(in srgb, var(--card) 78%, transparent) !important;
+}
+
+:root:not(.dark) [class~="bg-[#09090b]"],
+:root:not(.dark) [class~="bg-[#09090b]\/75"],
+:root:not(.dark) [class~="bg-[#09090b]\/95"] {
+  background-color: color-mix(in srgb, var(--background) 92%, transparent) !important;
+}
+
+:root:not(.dark) [class~="hover\:text-white"]:hover {
+  color: var(--foreground) !important;
+}
+
+:root:not(.dark) [class~="hover\:bg-white\/5"]:hover {
+  background-color: color-mix(in srgb, var(--muted) 55%, transparent) !important;
+}
+
+:root:not(.dark) [class~="hover\:bg-white\/10"]:hover {
+  background-color: var(--muted) !important;
+}
