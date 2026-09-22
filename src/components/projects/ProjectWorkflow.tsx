@@ -18,7 +18,7 @@ export default function ProjectWorkflow({
 
     return (
         <section>
-            <div className="mb-6">
+            <div className="mb-8 text-center">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-violet-400">
                     Product Workflow
                 </p>
@@ -27,20 +27,20 @@ export default function ProjectWorkflow({
                     From planning to execution
                 </h2>
 
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-400">
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
                     The Client application connects planning, execution, forms,
                     tasks, and workflow-driven business processes into a single
                     operational flow.
                 </p>
             </div>
 
-            <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
-                <CardContent className="p-6 sm:p-8">
-                    <div className="space-y-3">
+            <Card className="mx-auto max-w-3xl rounded-3xl border-white/10 bg-zinc-950/60">
+                <CardContent className="p-5 sm:p-6">
+                    <div className="space-y-2">
                         {workflow.map((step, index) => (
                             <div key={step}>
-                                <div className="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[0.03] px-5 py-4">
-                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-blue-400/20 bg-blue-400/10 text-xs font-semibold text-blue-300">
+                                <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.025] px-4 py-3 transition-colors hover:border-white/10 hover:bg-white/[0.04]">
+                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-blue-400/20 bg-blue-400/10 text-[11px] font-semibold text-blue-300">
                                         {String(index + 1).padStart(2, "0")}
                                     </div>
 
@@ -50,7 +50,7 @@ export default function ProjectWorkflow({
                                 </div>
 
                                 {index < workflow.length - 1 && (
-                                    <ArrowDown className="mx-auto my-1 h-4 w-4 text-zinc-700" />
+                                    <ArrowDown className="mx-auto h-4 w-4 text-zinc-700" />
                                 )}
                             </div>
                         ))}

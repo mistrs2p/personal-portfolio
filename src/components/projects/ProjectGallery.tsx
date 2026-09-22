@@ -2,7 +2,11 @@ import { ImageOff } from "lucide-react";
 import { motion } from "motion/react";
 
 interface ProjectGalleryProps {
-    screenshots: string[];
+    screenshots: {
+        src: string;
+        title: string;
+        description?: string;
+    }[];
     gifs: string[];
 }
 
@@ -34,17 +38,17 @@ export default function ProjectGallery({
                     </h3>
 
                     <div className="grid gap-5 md:grid-cols-2">
-                        {screenshots.map((image, index) => (
-                            <motion.img
-                                key={image}
-                                src={image}
-                                alt={`Project screenshot ${index + 1}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4 }}
-                                className="w-full rounded-2xl border border-white/10 object-cover transition hover:border-blue-400/30"
-                            />
+                        {screenshots.map((screenshot, index) => (
+                            <div key={screenshot.src}>
+                                <motion.img
+                                    src={screenshot.src}
+                                    alt={screenshot.title}
+                                />
+
+                                <h3>{screenshot.title}</h3>
+
+                                <p>{screenshot.description}</p>
+                            </div>
                         ))}
                     </div>
                 </div>

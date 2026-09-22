@@ -19,6 +19,7 @@ import ProjectImpact from "@/components/projects/ProjectImpact";
 
 import ProjectContext from "@/components/projects/ProjectContext";
 import ProjectWorkflow from "@/components/projects/ProjectWorkflow";
+import ProjectFormArchitecture from "@/components/projects/ProjectFormArchitecture";
 
 import { projects } from "@/data/projects";
 
@@ -77,6 +78,10 @@ export default function ProjectDetails() {
 
                 <div className="mt-14">
                     <ProjectWorkflow project={project} />
+                </div>
+
+                <div className="mt-14">
+                    <ProjectFormArchitecture project={project} />
                 </div>
 
                 {project.slug === "neco" && (

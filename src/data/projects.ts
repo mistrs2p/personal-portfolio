@@ -23,7 +23,11 @@ export interface Project {
   engineeringDecisions: string[];
   challenges: string[];
 
-  screenshots: string[];
+  screenshots: {
+    src: string;
+    title: string;
+    description?: string;
+  }[];
   gifs: string[];
 
   github?: string;
@@ -31,6 +35,29 @@ export interface Project {
 
   status: ProjectStatus;
   featured: boolean;
+}
+
+interface ProjectCaseStudy {
+  context?: string;
+  workflow?: string[];
+  highlights?: string[];
+}
+
+interface ProjectCaseStudy {
+  context?: string;
+  workflow?: string[];
+  highlights?: string[];
+
+  formArchitecture?: {
+    summary?: string;
+
+    layers: {
+      title: string;
+      description: string;
+    }[];
+
+    capabilities: string[];
+  };
 }
 
 export const projects: Project[] = [
@@ -82,6 +109,55 @@ export const projects: Project[] = [
         "Business-aware Kanban",
         "AI-assisted form actions",
       ],
+
+      formArchitecture: {
+        summary:
+          "A metadata-driven form infrastructure used across the Client application to render dynamic enterprise forms and keep field definition, entity state, validation, and UI behavior consistent across the form lifecycle.",
+
+        layers: [
+          {
+            title: "Form Definition",
+            description:
+              "Defines the structure and metadata of the form and its fields.",
+          },
+          {
+            title: "EntityField",
+            description:
+              "Represents field-level metadata used by the client to determine rendering and behavior.",
+          },
+          {
+            title: "EntityValue",
+            description:
+              "Connects field definitions to the actual value associated with the current entity or form instance.",
+          },
+          {
+            title: "Dynamic Rendering",
+            description:
+              "The frontend selects the appropriate control and configuration based on field metadata and the current entity context.",
+          },
+          {
+            title: "Validation & State",
+            description:
+              "Field rules such as required, read-only, and other validation or state constraints are enforced consistently in the UI.",
+          },
+          {
+            title: "Submit & API Integration",
+            description:
+              "Form state is validated and submitted through the repository and service layers to the backend APIs.",
+          },
+        ],
+
+        capabilities: [
+          "Metadata-driven field rendering",
+          "Required field enforcement",
+          "Read-only state enforcement",
+          "Context-aware validation",
+          "Dynamic control selection",
+          "Entity-based field/value handling",
+          "Reusable form infrastructure",
+          "Repository-based API integration",
+        ],
+      },
     },
 
     technologies: [
@@ -142,7 +218,50 @@ export const projects: Project[] = [
       "Managing UI state based on backend-driven workflow metadata",
     ],
 
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/projects/neco/dashboard.png",
+        title: "Enterprise Dashboard",
+        description:
+          "Operational dashboard for monitoring tasks, projects, alerts, meetings, issues, and follow-ups.",
+      },
+      // {
+      //   src: "/projects/neco/program-designer.png",
+      //   title: "Program Designer",
+      //   description:
+      //     "Hierarchical program design with structured flows, weighting, and editable program items.",
+      // },
+      {
+        src: "/projects/neco/advanced-search.png",
+        title: "Advanced Search & Filtering",
+        description:
+          "Rule-based search and filtering interface for complex enterprise datasets.",
+      },
+      {
+        src: "/projects/neco/data-grid.png",
+        title: "Enterprise Data Grid",
+        description:
+          "Data-intensive AG Grid interface with server-side operations, dynamic columns, selection, and export.",
+      },
+      {
+        src: "/projects/neco/kanban.png",
+        title: "Task Kanban",
+        description:
+          "Business-aware Kanban interface integrated with task operations and workflow actions.",
+      },
+      {
+        src: "/projects/neco/workflow-action.png",
+        title: "Workflow Action",
+        description:
+          "Task action interface for progress, workflow operations, and form submission.",
+      },
+      {
+        src: "/projects/neco/dynamic-form.png",
+        title: "Dynamic Form",
+        description:
+          "Metadata-driven enterprise form with dynamic controls, actions, and field-level behavior.",
+      },
+    ],
     gifs: [],
 
     github: undefined,
@@ -358,7 +477,11 @@ export interface Project {
   engineeringDecisions: string[];
   challenges: string[];
 
-  screenshots: string[];
+  screenshots: {
+    src: string;
+    title: string;
+    description?: string;
+  }[];
   gifs: string[];
 
   github?: string;
