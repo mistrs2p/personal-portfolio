@@ -6,11 +6,11 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import type { Project } from "@/data/projects";
+// import type { Project } from "@/data/projects";
 
-interface ProjectImpactProps {
-    project: Project;
-}
+// interface ProjectImpactProps {
+//     project: Project;
+// }
 
 const impactItems = [
     {
@@ -39,9 +39,10 @@ const impactItems = [
     },
 ];
 
-export default function ProjectImpact({
-    project,
-}: ProjectImpactProps) {
+// export default function ProjectImpact({
+//     project,
+// }: ProjectImpactProps) {
+export default function ProjectImpact() {
     return (
         <section>
             <div className="mb-6">

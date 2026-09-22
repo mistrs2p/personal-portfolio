@@ -90,7 +90,8 @@ export default function ProjectDetails() {
 
                 {project.slug === "neco" && (
                     <div className="mt-14">
-                        <ProjectImpact project={project} />
+                        {/* <ProjectImpact project={project} /> */}
+                        <ProjectImpact />
                     </div>
                 )}
                 {/* Project Cover */}

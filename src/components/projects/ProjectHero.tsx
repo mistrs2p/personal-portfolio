@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import { Link } from "react-router";
 
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
 import type { Project } from "@/data/projects";
 import ProjectLinks from "./ProjectLinks";
 
