@@ -19,7 +19,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#09090b]/75 backdrop-blur-xl">
+        <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-xl">
             <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6 lg:px-8">
 
                 {/* Logo */}
@@ -28,16 +28,16 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     className="group flex items-center gap-3"
                 >
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-bold text-white transition group-hover:border-blue-400/40 group-hover:bg-blue-400/10">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-muted text-sm font-bold text-foreground transition group-hover:border-blue-400/40 group-hover:bg-blue-400/10">
                         MM
                     </div>
 
                     <div className="hidden sm:block">
-                        <div className="text-sm font-semibold tracking-tight text-white">
+                        <div className="text-sm font-semibold tracking-tight text-foreground">
                             Arayina
                         </div>
 
-                        <div className="text-xs text-zinc-500">
+                        <div className="text-xs text-muted-foreground">
                             Software Engineer
                         </div>
                     </div>
@@ -70,7 +70,7 @@ export default function Navbar() {
                         href="https://github.com/mistrs2p"
                         target="_blank"
                         rel="noreferrer"
-                        className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-400 transition hover:border-white/20 hover:text-white"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-muted text-muted-foreground transition hover:border-foreground/20 hover:text-foreground"
                         aria-label="GitHub"
                     >
                         <SiGithub size={16} />
@@ -78,7 +78,7 @@ export default function Navbar() {
 
                     <a
                         href="#"
-                        className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-400 transition hover:border-white/20 hover:text-white"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-muted text-muted-foreground transition hover:border-foreground/20 hover:text-foreground"
                         aria-label="LinkedIn"
                     >
                         <SiLinkerd size={16} />
@@ -89,7 +89,7 @@ export default function Navbar() {
                 <button
                     type="button"
                     onClick={() => setOpen((value) => !value)}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-300 transition hover:bg-white/10 md:hidden"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-muted text-muted-foreground transition hover:bg-secondary md:hidden"
                     aria-label={open ? "Close navigation" : "Open navigation"}
                     aria-expanded={open}
                 >
@@ -103,7 +103,7 @@ export default function Navbar() {
 
             {/* Mobile Navigation */}
             {open && (
-                <div className="border-t border-white/10 bg-[#09090b]/95 px-6 py-5 backdrop-blur-xl md:hidden">
+                <div className="border-t border-border bg-background/95 px-6 py-5 backdrop-blur-xl md:hidden">
                     <nav className="flex flex-col gap-2">
                         {links.map((link) => (
                             <NavLink
@@ -124,12 +124,12 @@ export default function Navbar() {
                         ))}
                     </nav>
 
-                    <div className="mt-4 flex gap-2 border-t border-white/10 pt-4">
+                    <div className="mt-4 flex gap-2 border-t border-border pt-4">
                         <a
                             href="https://github.com/mistrs2p"
                             target="_blank"
                             rel="noreferrer"
-                            className="flex h-10 flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 text-sm text-zinc-400"
+                            className="flex h-10 flex-1 items-center justify-center gap-2 rounded-xl border border-border bg-muted text-sm text-muted-foreground"
                         >
                             <SiGithub size={16} />
                             GitHub
@@ -137,7 +137,7 @@ export default function Navbar() {
 
                         <a
                             href="#"
-                            className="flex h-10 flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 text-sm text-zinc-400"
+                            className="flex h-10 flex-1 items-center justify-center gap-2 rounded-xl border border-border bg-muted text-sm text-muted-foreground"
                         >
                             <SiLinkerd size={16} />
                             LinkedIn
