@@ -5,6 +5,23 @@ export type ProjectStatus =
   | "coming-soon"
   | "demo";
 
+export interface ProjectCaseStudy {
+  context?: string;
+  workflow?: string[];
+  highlights?: string[];
+
+  formArchitecture?: {
+    summary?: string;
+
+    layers: {
+      title: string;
+      description: string;
+    }[];
+
+    capabilities: string[];
+  };
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -17,8 +34,9 @@ export interface Project {
   problem?: string;
   solution?: string;
 
-  technologies: string[];
+  caseStudy?: ProjectCaseStudy;
 
+  technologies: string[];
   features: string[];
   architecture: string[];
   engineeringDecisions: string[];
@@ -29,7 +47,10 @@ export interface Project {
     title: string;
     description?: string;
   }[];
+
   gifs: string[];
+
+  github?: string;
 
   repositories?: {
     label: string;
