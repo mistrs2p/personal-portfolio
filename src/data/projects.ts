@@ -639,30 +639,33 @@ export const projects: Project[] = [
       "A focused AI chat application built with Next.js, React, TypeScript, Zustand, and the Vercel AI SDK, using OpenRouter as the model gateway and Gemini 2.5 Flash for streamed responses.",
 
     role:
-      "Full-Stack Developer responsible for designing and implementing the application UI, client-side conversation state, streaming response flow, and server-side LLM integration.",
+      "Full-Stack Developer responsible for designing and implementing the application UI, client-side conversation state, chat management flows, streaming response handling, and server-side LLM integration.",
 
     scope:
-      "A lightweight conversational AI workspace with multiple local conversations, streaming model responses, Markdown rendering, responsive sidebar navigation, and an API route that keeps the model integration on the server.",
+      "A lightweight conversational AI workspace with multiple persisted local conversations, multi-turn context, streamed model responses, Markdown rendering, message editing and regeneration, chat management, and a responsive sidebar.",
 
     problem:
-      "A conversational AI interface needs to feel immediate while keeping model API credentials out of the browser and maintaining coherent conversation state across multiple chats.",
+      "A conversational AI interface needs to feel immediate while keeping model API credentials out of the browser, preserving conversation context, and giving users practical control over their conversations and generated responses.",
 
     solution:
-      "A Next.js application with a client-side Zustand conversation store, a server-side API route using the Vercel AI SDK, OpenRouter as the model gateway, streamed text responses, and Markdown rendering for assistant output.",
+      "A Next.js application with a persistent Zustand conversation store, a server-side API route using the Vercel AI SDK, OpenRouter as the model gateway, streamed text responses, Markdown rendering, and client-side controls for chat creation, rename, deletion, message editing, regeneration, and generation cancellation.",
 
     caseStudy: {
       context:
-        "The project focuses on the core interaction loop of an AI assistant: start a conversation, send a prompt, receive a streamed response, render Markdown content, and switch between recent conversations.",
+        "The project focuses on the core interaction loop of an AI assistant while also exploring the state-management and UX concerns that appear in a multi-conversation AI application: persistent history, multi-turn context, streaming, regeneration, editing, and generation control.",
 
       workflow: [
-        "Create a new chat or start from the default conversation state",
+        "Create a new chat or continue an existing local conversation",
         "Enter a prompt in the chat input",
-        "Send the prompt to the Next.js API route",
+        "Send the prompt and conversation history to the Next.js API route",
         "Forward the request to OpenRouter using the configured model",
         "Stream the generated response back to the browser",
         "Update the assistant message incrementally as chunks arrive",
-        "Render the final assistant response as Markdown",
-        "Switch between locally managed conversations from the sidebar",
+        "Stop generation when needed while preserving the partial response",
+        "Render the assistant response as Markdown",
+        "Rename or delete conversations from the sidebar",
+        "Edit a previous user message and regenerate the conversation from that point",
+        "Regenerate the latest assistant response when needed",
       ],
 
       highlights: [
@@ -672,10 +675,15 @@ export const projects: Project[] = [
         "OpenRouter model gateway",
         "Gemini 2.5 Flash integration",
         "Zustand conversation state",
+        "Persistent local chat history",
+        "Multi-turn conversation context",
         "Multiple local chat sessions",
-        "Incremental streamed message updates",
+        "Edit message and regenerate flow",
+        "Regenerate response",
+        "Stop generation with AbortController",
         "Markdown assistant rendering",
         "Responsive collapsible chat sidebar",
+        "Modal-based chat rename and deletion",
       ],
     },
 
@@ -695,9 +703,17 @@ export const projects: Project[] = [
     features: [
       "AI Chat",
       "Streaming Responses",
+      "Multi-turn Conversation Context",
+      "Persistent Chat History",
       "Multiple Conversations",
       "Conversation Sidebar",
       "New Chat",
+      "Rename Chat",
+      "Delete Chat",
+      "Edit User Message",
+      "Save & Regenerate",
+      "Regenerate Response",
+      "Stop Generation",
       "Markdown Rendering",
       "Incremental Assistant Updates",
       "Responsive Sidebar",
@@ -707,31 +723,66 @@ export const projects: Project[] = [
     architecture: [
       "Next.js App Router",
       "Client-side Zustand Store",
+      "Persisted Local Conversation State",
       "Next.js Route Handler",
       "Vercel AI SDK",
       "OpenRouter API Gateway",
       "Gemini 2.5 Flash Model",
       "Streaming Text Response",
+      "AbortController-based Generation Cancellation",
     ],
 
     engineeringDecisions: [
       "Kept the OpenRouter API key on the server by integrating the model through a Next.js route handler",
       "Used the Vercel AI SDK streamText API to expose model output as a text stream",
+      "Sent prior conversation messages with each request so the model can maintain multi-turn context",
       "Updated the assistant message incrementally as response chunks arrived instead of waiting for the complete response",
-      "Separated conversation state from UI components with a Zustand store",
-      "Represented chats and messages with explicit TypeScript types",
+      "Used an AbortController to stop an active generation without discarding the partial assistant response",
+      "Separated conversation state from UI components with a persisted Zustand store",
+      "Persisted chats and the active conversation in local storage for continuity across page refreshes",
+      "Allowed user messages to be edited and regenerated while truncating the conversation after the edited point",
+      "Used explicit TypeScript types for chats, messages, and message roles",
       "Used Markdown rendering for assistant responses to preserve formatted AI output",
+      "Replaced browser prompt/confirm flows with application modals for chat rename and deletion",
       "Used a dedicated OpenRouter gateway so the application does not couple its UI directly to a model provider SDK endpoint",
     ],
 
     challenges: [
       "Delivering a responsive streaming interaction instead of waiting for a complete model response",
       "Keeping model credentials outside the browser",
-      "Synchronizing streamed assistant content with the active local conversation",
-      "Managing multiple chat sessions while keeping the UI simple",
+      "Maintaining coherent multi-turn context across multiple local conversations",
+      "Synchronizing streamed assistant content with the active persisted conversation",
+      "Stopping generation while preserving the response already received",
+      "Editing an earlier user message while keeping the resulting conversation history consistent",
+      "Managing multiple chat sessions without making the interface cumbersome",
     ],
 
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/projects/ai-chat/main-chat.webp",
+        title: "AI Chat & Markdown Response",
+        description:
+          "Main conversational interface showing streamed assistant output rendered as formatted Markdown with conversation controls.",
+      },
+      {
+        src: "/projects/ai-chat/conversation-context.webp",
+        title: "Multi-turn Conversation Context",
+        description:
+          "Conversation flow demonstrating that the assistant can use information from an earlier message when responding to a later prompt.",
+      },
+      {
+        src: "/projects/ai-chat/chat-management.webp",
+        title: "Chat Management",
+        description:
+          "Application-level rename and delete modals for managing persisted conversations without relying on browser prompts.",
+      },
+      {
+        src: "/projects/ai-chat/streaming-stop.webp",
+        title: "Streaming & Stop Generation",
+        description:
+          "Active response generation with a Stop control for cancelling the stream while keeping the received partial response.",
+      },
+    ],
     gifs: [],
 
     github: "https://github.com/mistrs2p/Free-AI-Chatbot",
