@@ -59,7 +59,7 @@ export default function ProjectDetails() {
         <div className="relative min-h-screen overflow-hidden">
             <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px]" />
 
-            <div className="relative mx-auto max-w-6xl px-6 py-16 lg:px-8">
+            <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
 
                 <ProjectHero project={project} />
 
@@ -95,7 +95,7 @@ export default function ProjectDetails() {
                     </div>
                 )}
                 {project.screenshots.length > 0 && (
-                    <div className="mt-14 overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/60">
+                    <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card sm:mt-14 sm:rounded-3xl">
                         <img
                             src={project.screenshots[0].src}
                             alt={project.screenshots[0].title}
@@ -107,7 +107,7 @@ export default function ProjectDetails() {
                 {/* Project Content */}
                 <div className="mt-14">
                     <Tabs defaultValue="overview">
-                        <TabsList className="border border-white/10 bg-white/[0.03]">
+                        <TabsList className="w-full justify-start overflow-x-auto border border-border bg-muted/40 sm:w-auto">
                             <TabsTrigger value="overview">
                                 Overview
                             </TabsTrigger>
