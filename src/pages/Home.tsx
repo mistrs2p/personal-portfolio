@@ -91,14 +91,14 @@ export default function Home() {
                                 Senior Frontend / Full-Stack Developer
                             </p>
 
-                            <h1 className="text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+                            <h1 className="text-5xl font-semibold tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
                                 I build products
-                                <span className="block bg-linear-to-r from-white via-blue-200 to-violet-400 bg-clip-text text-transparent">
+                                <span className="block bg-linear-to-r from-foreground via-blue-400 to-violet-500 bg-clip-text text-transparent">
                                     from idea to production.
                                 </span>
                             </h1>
 
-                            <p className="mt-7 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+                            <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
                                 I work across frontend, backend, databases, infrastructure,
                                 deployment, and AI-powered applications — turning complex
                                 requirements into practical software.
@@ -124,7 +124,7 @@ export default function Home() {
                                     variant: "outline",
                                     size: "lg",
                                     className:
-                                        "rounded-xl border-white/10 bg-white/5 text-white hover:bg-white/10",
+                                        "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                                 })}
                             >
                                 View Resume
@@ -138,7 +138,7 @@ export default function Home() {
                                     variant: "outline",
                                     size: "lg",
                                     className:
-                                        "rounded-xl border-white/10 bg-white/5 text-white hover:bg-white/10",
+                                        "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                                 })}
                             >
                                 <SiGithub className="mr-2 h-4 w-4" />
@@ -151,7 +151,7 @@ export default function Home() {
                                 <Badge
                                     key={tech}
                                     variant="outline"
-                                    className="rounded-full border-white/10 bg-white/3 px-3 py-1.5 text-zinc-400"
+                                    className="rounded-full border-border bg-muted px-3 py-1.5 text-muted-foreground"
                                 >
                                     {tech}
                                 </Badge>
@@ -163,10 +163,10 @@ export default function Home() {
                     <div className="relative mx-auto w-full max-w-md">
                         <div className="absolute -inset-8 rounded-[40px] bg-linear-to-br from-blue-500/15 via-violet-500/10 to-transparent blur-3xl" />
 
-                        <div className="relative rounded-[30px] border border-white/10 bg-zinc-900/70 p-4 shadow-2xl backdrop-blur-xl">
-                            <div className="rounded-3xl border border-white/10 bg-black/30 p-5">
+                        <div className="relative rounded-[30px] border border-border bg-card p-4 shadow-2xl backdrop-blur-xl">
+                            <div className="rounded-3xl border border-border bg-background p-5">
                                 <div className="mb-5 flex items-center justify-between">
-                                    <span className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                                    <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
                                         Engineering Stack
                                     </span>
 
@@ -180,17 +180,17 @@ export default function Home() {
                                         return (
                                             <div
                                                 key={item.title}
-                                                className="group flex gap-4 rounded-2xl border border-white/5 bg-white/3 p-4 transition hover:border-white/10 hover:bg-white/5"
+                                                className="group flex gap-4 rounded-2xl border border-border/70 bg-muted p-4 transition hover:border-foreground/20 hover:bg-secondary"
                                             >
-                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-blue-400">
+                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-blue-500">
                                                     <Icon className="h-5 w-5" />
                                                 </div>
 
                                                 <div>
-                                                    <h3 className="text-sm font-semibold text-white">
+                                                    <h3 className="text-sm font-semibold text-foreground">
                                                         {item.title}
                                                     </h3>
-                                                    <p className="mt-1 text-xs leading-5 text-zinc-500">
+                                                    <p className="mt-1 text-xs leading-5 text-muted-foreground">
                                                         {item.description}
                                                     </p>
                                                 </div>
@@ -203,13 +203,13 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-20 flex justify-center text-zinc-600">
+                <div className="mt-20 flex justify-center text-muted-foreground">
                     <ArrowDown className="h-5 w-5 animate-bounce" />
                 </div>
             </section>
 
             {/* Featured Projects */}
-            <section className="relative border-y border-white/5 bg-white/2">
+            <section className="relative border-y border-border/70 bg-muted/40">
                 <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
                     <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
                         <div>
@@ -217,7 +217,7 @@ export default function Home() {
                                 Selected work
                             </p>
 
-                            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
                                 Projects worth exploring
                             </h2>
 
@@ -233,7 +233,7 @@ export default function Home() {
                                 variant: "outline",
                                 size: "lg",
                                 className:
-                                    "rounded-xl border-white/10 bg-white/5 text-white hover:bg-white/10",
+                                    "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                             })}
                         >
                             View All Projects
@@ -259,13 +259,13 @@ export default function Home() {
                             How I work
                         </p>
 
-                        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+                        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground">
                             Engineering beyond the UI.
                         </h2>
                     </div>
 
                     <div className="max-w-3xl">
-                        <p className="text-lg leading-8 text-zinc-400">
+                        <p className="text-lg leading-8 text-muted-foreground">
                             My work goes beyond implementing interfaces. I enjoy
                             understanding the problem, designing the architecture,
                             connecting the layers, and taking software all the way to
@@ -283,7 +283,7 @@ export default function Home() {
                             ].map((item) => (
                                 <div
                                     key={item}
-                                    className="rounded-2xl border border-white/5 bg-white/2 px-5 py-4 text-sm text-zinc-300"
+                                    className="rounded-2xl border border-border bg-card px-5 py-4 text-sm text-foreground"
                                 >
                                     {item}
                                 </div>
@@ -294,20 +294,20 @@ export default function Home() {
             </section>
 
             {/* Current Focus */}
-            <section className="border-t border-white/5 bg-linear-to-b from-blue-500/3 to-transparent">
+            <section className="border-t border-border/70 bg-linear-to-b from-blue-500/5 to-transparent">
                 <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-                    <div className="rounded-4xl border border-white/10 bg-white/3 p-8 backdrop-blur-xl sm:p-10 lg:p-12">
+                    <div className="rounded-4xl border border-border bg-card p-8 backdrop-blur-xl sm:p-10 lg:p-12">
                         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
                             <div>
                                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
                                     Currently exploring
                                 </p>
 
-                                <h2 className="mt-3 text-3xl font-semibold text-white">
+                                <h2 className="mt-3 text-3xl font-semibold text-foreground">
                                     AI Engineering & intelligent applications
                                 </h2>
 
-                                <p className="mt-4 max-w-2xl leading-7 text-zinc-500">
+                                <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
                                     Exploring LLM applications, RAG, embeddings, vector search,
                                     and practical AI integration into real software products.
                                 </p>
@@ -319,7 +319,7 @@ export default function Home() {
                                     variant: "outline",
                                     size: "lg",
                                     className:
-                                        "rounded-xl border-white/10 bg-white/5 text-white hover:bg-white/10",
+                                        "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                                 })}
                             >
                                 Explore AI work
