@@ -94,22 +94,15 @@ export default function ProjectDetails() {
                         <ProjectImpact />
                     </div>
                 )}
-                {/* Project Cover */}
-                <div className="mt-14">
-                    <div className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/60">
-                        <div className="flex aspect-[21/9] items-center justify-center bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent">
-                            <div className="text-center">
-                                <div className="text-5xl">
-                                    🖼️
-                                </div>
-
-                                <p className="mt-4 text-sm text-zinc-600">
-                                    Project cover / screenshots coming soon
-                                </p>
-                            </div>
-                        </div>
+                {project.screenshots.length > 0 && (
+                    <div className="mt-14 overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/60">
+                        <img
+                            src={project.screenshots[0].src}
+                            alt={project.screenshots[0].title}
+                            className="block w-full object-cover"
+                        />
                     </div>
-                </div>
+                )}
 
                 {/* Project Content */}
                 <div className="mt-14">
