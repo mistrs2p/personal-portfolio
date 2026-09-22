@@ -633,35 +633,103 @@ export const projects: Project[] = [
     slug: "ai-chat",
     title: "AI Chat",
     category: "AI / LLM",
-    tagline: "Multi-provider AI chat application",
+    tagline: "A streaming AI chat interface powered by OpenRouter",
+
     description:
-      "An AI chat application supporting multiple LLM providers with conversation memory, streaming responses, and Markdown rendering.",
+      "A focused AI chat application built with Next.js, React, TypeScript, Zustand, and the Vercel AI SDK, using OpenRouter as the model gateway and Gemini 2.5 Flash for streamed responses.",
+
+    role:
+      "Full-Stack Developer responsible for designing and implementing the application UI, client-side conversation state, streaming response flow, and server-side LLM integration.",
+
+    scope:
+      "A lightweight conversational AI workspace with multiple local conversations, streaming model responses, Markdown rendering, responsive sidebar navigation, and an API route that keeps the model integration on the server.",
+
+    problem:
+      "A conversational AI interface needs to feel immediate while keeping model API credentials out of the browser and maintaining coherent conversation state across multiple chats.",
+
+    solution:
+      "A Next.js application with a client-side Zustand conversation store, a server-side API route using the Vercel AI SDK, OpenRouter as the model gateway, streamed text responses, and Markdown rendering for assistant output.",
+
+    caseStudy: {
+      context:
+        "The project focuses on the core interaction loop of an AI assistant: start a conversation, send a prompt, receive a streamed response, render Markdown content, and switch between recent conversations.",
+
+      workflow: [
+        "Create a new chat or start from the default conversation state",
+        "Enter a prompt in the chat input",
+        "Send the prompt to the Next.js API route",
+        "Forward the request to OpenRouter using the configured model",
+        "Stream the generated response back to the browser",
+        "Update the assistant message incrementally as chunks arrive",
+        "Render the final assistant response as Markdown",
+        "Switch between locally managed conversations from the sidebar",
+      ],
+
+      highlights: [
+        "Next.js App Router application",
+        "React + TypeScript",
+        "Vercel AI SDK streaming",
+        "OpenRouter model gateway",
+        "Gemini 2.5 Flash integration",
+        "Zustand conversation state",
+        "Multiple local chat sessions",
+        "Incremental streamed message updates",
+        "Markdown assistant rendering",
+        "Responsive collapsible chat sidebar",
+      ],
+    },
 
     technologies: [
-      "LLM APIs",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Vercel AI SDK",
       "OpenRouter",
-      "Hugging Face",
-      "Gemini",
-      "Streaming",
-      "Markdown",
-      "Memory",
+      "Gemini 2.5 Flash",
+      "Zustand",
+      "React Markdown",
+      "Tailwind CSS",
+      "shadcn/ui",
     ],
 
     features: [
-      "Multi-provider AI Integration",
-      "Conversation Memory",
+      "AI Chat",
       "Streaming Responses",
+      "Multiple Conversations",
+      "Conversation Sidebar",
+      "New Chat",
       "Markdown Rendering",
+      "Incremental Assistant Updates",
+      "Responsive Sidebar",
+      "Server-side API Route",
     ],
 
     architecture: [
-      "Provider-based AI Integration",
-      "Streaming Response Pipeline",
+      "Next.js App Router",
+      "Client-side Zustand Store",
+      "Next.js Route Handler",
+      "Vercel AI SDK",
+      "OpenRouter API Gateway",
+      "Gemini 2.5 Flash Model",
+      "Streaming Text Response",
     ],
 
-    engineeringDecisions: [],
+    engineeringDecisions: [
+      "Kept the OpenRouter API key on the server by integrating the model through a Next.js route handler",
+      "Used the Vercel AI SDK streamText API to expose model output as a text stream",
+      "Updated the assistant message incrementally as response chunks arrived instead of waiting for the complete response",
+      "Separated conversation state from UI components with a Zustand store",
+      "Represented chats and messages with explicit TypeScript types",
+      "Used Markdown rendering for assistant responses to preserve formatted AI output",
+      "Used a dedicated OpenRouter gateway so the application does not couple its UI directly to a model provider SDK endpoint",
+    ],
 
-    challenges: [],
+    challenges: [
+      "Delivering a responsive streaming interaction instead of waiting for a complete model response",
+      "Keeping model credentials outside the browser",
+      "Synchronizing streamed assistant content with the active local conversation",
+      "Managing multiple chat sessions while keeping the UI simple",
+    ],
 
     screenshots: [],
     gifs: [],
@@ -671,7 +739,6 @@ export const projects: Project[] = [
     status: "completed",
     featured: true,
   },
-
   {
     slug: "rag",
     title: "RAG / AI Engineering",
