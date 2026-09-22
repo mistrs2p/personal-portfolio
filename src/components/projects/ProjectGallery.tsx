@@ -74,7 +74,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                             </span>
                         </div>
 
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
                             {screenshots.map((screenshot, index) => (
                                 <motion.button
                                     key={screenshot.src}
@@ -100,7 +100,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                         </div>
                                     </div>
 
-                                    <div className="p-5">
+                                    <div className="p-4 sm:p-5">
                                         <h4 className="text-sm font-semibold text-foreground">
                                             {screenshot.title}
                                         </h4>
@@ -135,7 +135,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
 
             {activeScreenshot && activeIndex !== null && (
                 <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-md sm:p-8"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-2 backdrop-blur-md sm:p-8"
                     role="dialog"
                     aria-modal="true"
                     aria-label={activeScreenshot.title + " gallery"}
@@ -144,7 +144,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                     }}
                 >
                     <div className="relative flex max-h-full w-full max-w-7xl flex-col">
-                        <div className="mb-3 flex items-center justify-between gap-4 text-white">
+                        <div className="mb-2 flex items-center justify-between gap-3 text-white sm:mb-3 sm:gap-4">
                             <div className="min-w-0">
                                 <p className="truncate text-sm font-semibold">
                                     {activeScreenshot.title}
@@ -163,11 +163,11 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                             </button>
                         </div>
 
-                        <div className="relative min-h-0 overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
+                        <div className="relative min-h-0 overflow-hidden rounded-xl border border-white/10 bg-black shadow-2xl sm:rounded-2xl">
                             <img
                                 src={activeScreenshot.src}
                                 alt={activeScreenshot.title}
-                                className="max-h-[calc(100vh-150px)] w-full object-contain"
+                                className="max-h-[calc(100vh-115px)] w-full object-contain sm:max-h-[calc(100vh-150px)]"
                             />
 
                             {screenshots.length > 1 && (
@@ -180,7 +180,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                                     screenshots.length,
                                             )
                                         }
-                                        className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white backdrop-blur transition hover:bg-black/75"
+                                        className="absolute left-2 top-1/2 flex h-10 w-10 sm:left-3 sm:h-11 sm:w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white backdrop-blur transition hover:bg-black/75"
                                         aria-label="Previous image"
                                     >
                                         <ChevronLeft className="h-6 w-6" />
@@ -192,7 +192,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                                 (activeIndex + 1) % screenshots.length,
                                             )
                                         }
-                                        className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white backdrop-blur transition hover:bg-black/75"
+                                        className="absolute right-2 top-1/2 flex h-10 w-10 sm:right-3 sm:h-11 sm:w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white backdrop-blur transition hover:bg-black/75"
                                         aria-label="Next image"
                                     >
                                         <ChevronRight className="h-6 w-6" />
