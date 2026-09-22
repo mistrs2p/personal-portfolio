@@ -456,62 +456,179 @@ export const projects: Project[] = [
     title: "Ketabdaneh",
     category: "Full-Stack / Systems",
     tagline: "Branch operations management system",
+
     description:
-      "A branch operations management system designed to organize people, events, assignments, tasks, workflows, and operational visibility.",
+      "An actively developed branch operations management system designed to organize people, events, assignments, scheduling, and operational visibility for branch managers.",
+
+    role:
+      "Full-Stack Developer responsible for designing and implementing the application across the Next.js frontend, FastAPI backend, database, background services, deployment stack, and engineering infrastructure.",
+
+    scope:
+      "A branch operations workspace centered around people, events, event assignments, calendar scheduling, authentication, role-based access control, and manager visibility, with additional operational modules still under development.",
+
+    problem:
+      "Branch managers need visibility into events, responsibilities, assignments, and operational status without continuously following up with people manually. The system is being built to make branch operations more organized and predictable, especially when the manager is not physically present.",
+
+    solution:
+      "A modular full-stack application that centralizes people, events, assignments, and scheduling behind a Next.js frontend and FastAPI API, with PostgreSQL persistence and production-oriented infrastructure for authentication, authorization, background jobs, notifications, observability, backups, and deployment verification.",
+
+    caseStudy: {
+      context:
+        "Ketabdaneh is a branch operations management system for a single branch. The current MVP is centered on creating events, assigning people to event responsibilities, displaying scheduled events in a calendar, and giving the manager a consolidated operational view.",
+
+      workflow: [
+        "Create an event",
+        "Schedule the event",
+        "Assign one or more people to event responsibilities",
+        "Keep assignments in a pending approval state",
+        "Display planned events in the weekly calendar",
+        "Give the manager a consolidated dashboard view of people, events, and assignments",
+      ],
+
+      highlights: [
+        "End-to-end full-stack implementation",
+        "Next.js + TypeScript frontend",
+        "FastAPI + Python backend",
+        "Modular Monolith architecture",
+        "PostgreSQL persistence with SQLAlchemy",
+        "Alembic database migrations",
+        "JWT authentication with server-side RBAC",
+        "Typed frontend API integration layer",
+        "Event and assignment workflows",
+        "Weekly calendar scheduling",
+        "Redis-backed background notification delivery",
+        "Telegram and Bale notification providers",
+        "Health checks and Prometheus-compatible metrics",
+        "Docker + Caddy deployment architecture",
+        "Backup and restore tooling",
+        "CI/CD and security automation",
+        "Bilingual English / Persian UI with RTL/LTR support",
+      ],
+    },
 
     technologies: [
       "Next.js",
+      "React",
       "TypeScript",
       "FastAPI",
+      "Python",
       "PostgreSQL",
       "SQLAlchemy",
       "Alembic",
       "Redis",
+      "ARQ",
       "Docker",
+      "Docker Compose",
       "Caddy",
+      "JWT",
+      "RBAC",
+      "Prometheus",
+      "GitHub Actions",
     ],
 
     features: [
       "Authentication",
-      "RBAC",
-      "Events & Assignments",
-      "Calendar",
-      "Notifications",
-      "Background Jobs",
+      "Role-Based Access Control",
+      "People Management",
+      "People Roles",
+      "Event Management",
+      "Event Assignments",
+      "Assignment Approval State",
+      "Weekly Calendar",
+      "Manager Dashboard",
+      "Notification Infrastructure",
+      "Telegram Provider",
+      "Bale Provider",
+      "Background Job Worker",
       "Health Checks",
-      "Observability",
+      "Metrics",
       "Backup & Restore",
-      "CI/CD",
-      "Security Automation",
-      "Bilingual FA/EN UI",
-      "RTL/LTR",
+      "Bilingual English / Persian UI",
+      "RTL / LTR Support",
+      "Light / Dark Theme",
     ],
 
     architecture: [
+      "Next.js + TypeScript Frontend",
+      "FastAPI + Python Backend",
       "Modular Monolith",
-      "Next.js + FastAPI + PostgreSQL",
-      "Redis Background Worker",
-      "Containerized Production Stack",
+      "REST / HTTP JSON Boundary",
+      "PostgreSQL + SQLAlchemy",
+      "Alembic Versioned Migrations",
+      "Redis + ARQ Background Worker",
+      "Provider-agnostic Notification Layer",
+      "Caddy Reverse Proxy",
+      "Dockerized Deployment Stack",
+      "Internal-only Database, Redis, API, and Metrics Surfaces",
     ],
 
     engineeringDecisions: [
-      "Server-side authorization",
-      "Provider-agnostic notification layer",
-      "Bounded retry strategy with exponential backoff",
-      "Production-oriented container architecture",
+      "Chose a Modular Monolith instead of microservices to keep cross-domain transactions and operational complexity appropriate for a single-branch system",
+      "Kept business rules, authorization, and state transitions in the backend as the source of truth",
+      "Separated the frontend from the backend through a single typed HTTP/JSON API boundary",
+      "Centralized frontend API communication in a shared fetch-based client and domain-specific API modules",
+      "Used JWT Bearer authentication with server-side RBAC rather than trusting client-side role state",
+      "Designed notification delivery behind a provider abstraction so Telegram and Bale remain replaceable integrations",
+      "Moved notification delivery to a Redis-backed worker with bounded retries and exponential backoff",
+      "Added readiness and liveness checks so infrastructure health is independent from application authentication",
+      "Kept Prometheus metrics internal to the Docker network instead of exposing them publicly",
+      "Designed the deployment stack so Caddy is the only public-facing service while application and data services remain internal",
+      "Added explicit database backup and restore tooling with restore rehearsal against a throwaway database",
+      "Added CI checks for backend, frontend, Docker, and security concerns",
+      "Applied production fail-closed configuration rules for secrets, CORS, database, and Redis settings",
     ],
 
-    challenges: [],
+    challenges: [
+      "Modeling an operational domain while several business rules are still being discovered",
+      "Keeping authorization and business state transitions centralized in the backend",
+      "Designing event assignments as a domain concept distinct from a person's permanent organizational role",
+      "Building background notification infrastructure without coupling business requests to provider network calls",
+      "Creating a deployment architecture that keeps public and internal surfaces clearly separated",
+      "Supporting bilingual Persian / English UI and RTL / LTR behavior",
+    ],
 
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/projects/ketabdaneh/dashboard.png",
+        title: "Operations Dashboard",
+        description:
+          "Manager-oriented operational overview showing people, upcoming events, assignments, event status, and events requiring attention.",
+      },
+      {
+        src: "/projects/ketabdaneh/calendar.png",
+        title: "Weekly Calendar",
+        description:
+          "Weekly branch schedule showing planned events across days and time slots.",
+      },
+      {
+        src: "/projects/ketabdaneh/event-detail.png",
+        title: "Event Assignments",
+        description:
+          "Event detail view showing assigned people, event responsibilities, and pending assignment approval state.",
+      },
+      {
+        src: "/projects/ketabdaneh/events.png",
+        title: "Events",
+        description:
+          "Branch event list with event type, planned time, status, and access to event details.",
+      },
+      {
+        src: "/projects/ketabdaneh/people.png",
+        title: "People & Roles",
+        description:
+          "Branch member directory showing people, their organizational roles, and active/inactive status.",
+      },
+    ],
+
     gifs: [],
 
     github: "https://github.com/mistrs2p/ketabdan-ms",
 
-    status: "production-ready",
+    liveDemo: undefined,
+
+    status: "active",
     featured: true,
   },
-
   {
     slug: "ai-chat",
     title: "AI Chat",
