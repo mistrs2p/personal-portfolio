@@ -1,4 +1,5 @@
-import { Download, ExternalLink, FileText, Github } from "lucide-react";
+import { Download, ExternalLink, FileText } from "lucide-react";
+import {SiGithub as Github} from "@icons-pack/react-simple-icons";
 import { motion } from "motion/react";
 import { buttonVariants } from "@/components/ui/button";
 import { experiences } from "@/data/experience";

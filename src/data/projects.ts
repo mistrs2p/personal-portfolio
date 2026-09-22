@@ -759,25 +759,25 @@ export const projects: Project[] = [
 
     screenshots: [
       {
-        src: "/projects/ai-chat/main-chat.webp",
+        src: "/projects/ai-chat/main-chat.png",
         title: "AI Chat & Markdown Response",
         description:
           "Main conversational interface showing streamed assistant output rendered as formatted Markdown with conversation controls.",
       },
       {
-        src: "/projects/ai-chat/conversation-context.webp",
+        src: "/projects/ai-chat/conversation-context.png",
         title: "Multi-turn Conversation Context",
         description:
           "Conversation flow demonstrating that the assistant can use information from an earlier message when responding to a later prompt.",
       },
       {
-        src: "/projects/ai-chat/chat-management.webp",
+        src: "/projects/ai-chat/chat-management.png",
         title: "Chat Management",
         description:
           "Application-level rename and delete modals for managing persisted conversations without relying on browser prompts.",
       },
       {
-        src: "/projects/ai-chat/streaming-stop.webp",
+        src: "/projects/ai-chat/streaming-stop.png",
         title: "Streaming & Stop Generation",
         description:
           "Active response generation with a Stop control for cancelling the stream while keeping the received partial response.",
