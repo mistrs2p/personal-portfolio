@@ -4,22 +4,7 @@ export type ProjectStatus =
   | "production-ready"
   | "coming-soon"
   | "demo";
-interface ProjectCaseStudy {
-  context?: string;
-  workflow?: string[];
-  highlights?: string[];
 
-  formArchitecture?: {
-    summary?: string;
-
-    layers: {
-      title: string;
-      description: string;
-    }[];
-
-    capabilities: string[];
-  };
-}
 export interface Project {
   slug: string;
   title: string;
@@ -46,34 +31,15 @@ export interface Project {
   }[];
   gifs: string[];
 
-  github?: string;
+  repositories?: {
+    label: string;
+    url: string;
+  }[];
+
   liveDemo?: string;
 
   status: ProjectStatus;
   featured: boolean;
-}
-
-interface ProjectCaseStudy {
-  context?: string;
-  workflow?: string[];
-  highlights?: string[];
-}
-
-interface ProjectCaseStudy {
-  context?: string;
-  workflow?: string[];
-  highlights?: string[];
-
-  formArchitecture?: {
-    summary?: string;
-
-    layers: {
-      title: string;
-      description: string;
-    }[];
-
-    capabilities: string[];
-  };
 }
 
 export const projects: Project[] = [
@@ -447,7 +413,16 @@ export const projects: Project[] = [
 
     gifs: [],
 
-    github: "https://github.com/mistrs2p/pomodoro-next-app",
+    repositories: [
+      {
+        label: "Frontend",
+        url: "https://github.com/mistrs2p/pomodoro-next-app",
+      },
+      {
+        label: "Backend",
+        url: "https://github.com/mistrs2p/pomodoro-nest",
+      },
+    ],
 
     liveDemo: undefined,
 

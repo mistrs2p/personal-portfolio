@@ -1,5 +1,4 @@
 import { ArrowLeft } from "lucide-react";
-import { SiGithub as Github } from "@icons-pack/react-simple-icons";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
@@ -62,21 +61,6 @@ export default function ProjectHero({
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3">
-                    {project.github && (
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={buttonVariants({
-                                className:
-                                    "rounded-xl bg-white text-black hover:bg-zinc-200",
-                            })}
-                        >
-                            <Github className="mr-2 h-4 w-4" />
-                            GitHub
-                        </a>
-                    )}
-
                     <ProjectLinks project={project} />
                 </div>
             </motion.div>
