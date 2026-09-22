@@ -1,4 +1,6 @@
 import {
+    Activity,
+    Bell,
     Brain,
     Database,
     Globe,
@@ -16,90 +18,157 @@ interface ProjectSystemArchitectureProps {
 export default function ProjectSystemArchitecture({
     project,
 }: ProjectSystemArchitectureProps) {
-    if (project.slug !== "pomodoro") {
-        return null;
+    if (project.slug === "pomodoro") {
+        return <PomodoroArchitecture />;
     }
 
+    if (project.slug === "ketabdaneh") {
+        return <KetabdanehArchitecture />;
+    }
+
+    return null;
+}
+
+function PomodoroArchitecture() {
+    return (
+        <ArchitectureSection
+            eyebrow="System Architecture"
+            title="Next.js → NestJS → PostgreSQL"
+            description="A separated full-stack architecture with a dedicated web client, REST API, authentication layer, and persistent PostgreSQL storage."
+            nodes={[
+                {
+                    icon: Globe,
+                    title: "Next.js Frontend",
+                    items: ["React", "TypeScript", "React Hook Form", "Zod", "Zustand"],
+                },
+                {
+                    icon: Server,
+                    title: "NestJS API",
+                    items: ["REST API", "Authentication", "OAuth", "2FA", "Business Services"],
+                },
+                {
+                    icon: Database,
+                    title: "PostgreSQL",
+                    items: ["TypeORM", "User Data", "Tasks", "Focus Sessions", "Profiles"],
+                },
+            ]}
+            features={[
+                {
+                    icon: LockKeyhole,
+                    title: "Secure Sessions",
+                    description: "JWT access tokens are kept in httpOnly cookies rather than frontend state.",
+                },
+                {
+                    icon: Brain,
+                    title: "Persistent Timer",
+                    description: "Timer state uses an absolute end timestamp to survive page refreshes.",
+                },
+                {
+                    icon: Server,
+                    title: "Idempotent Persistence",
+                    description: "Client session identifiers prevent duplicate focus-session writes.",
+                },
+            ]}
+        />
+    );
+}
+
+function KetabdanehArchitecture() {
+    return (
+        <ArchitectureSection
+            eyebrow="System Architecture"
+            title="Next.js → FastAPI → PostgreSQL"
+            description="A modular monolith with a typed web client, backend-owned business rules and authorization, relational persistence, and production-oriented background and edge infrastructure."
+            nodes={[
+                {
+                    icon: Globe,
+                    title: "Next.js Frontend",
+                    items: ["React", "TypeScript", "next-intl", "Typed API Client", "RTL / LTR"],
+                },
+                {
+                    icon: Server,
+                    title: "FastAPI Backend",
+                    items: ["REST API", "Modular Monolith", "JWT Auth", "RBAC", "Domain Services"],
+                },
+                {
+                    icon: Database,
+                    title: "PostgreSQL",
+                    items: ["SQLAlchemy", "Alembic", "People", "Events", "Assignments"],
+                },
+            ]}
+            features={[
+                {
+                    icon: Bell,
+                    title: "Background Delivery",
+                    description: "Redis and ARQ move notification delivery out of business request paths with bounded retries.",
+                },
+                {
+                    icon: LockKeyhole,
+                    title: "Hardened Edge",
+                    description: "Caddy is the public edge while API, database, Redis, and internal metrics stay behind the container network.",
+                },
+                {
+                    icon: Activity,
+                    title: "Operational Readiness",
+                    description: "Liveness, readiness, metrics, deployment verification, and backup/restore tooling support safer operations.",
+                },
+            ]}
+        />
+    );
+}
+
+function ArchitectureSection({
+    eyebrow,
+    title,
+    description,
+    nodes,
+    features,
+}: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    nodes: {
+        icon: typeof Globe;
+        title: string;
+        items: string[];
+    }[];
+    features: {
+        icon: typeof Globe;
+        title: string;
+        description: string;
+    }[];
+}) {
     return (
         <section>
             <div className="mb-6">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                    System Architecture
+                    {eyebrow}
                 </p>
 
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                    Next.js → NestJS → PostgreSQL
+                    {title}
                 </h2>
 
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-400">
-                    A separated full-stack architecture with a dedicated web
-                    client, REST API, authentication layer, and persistent
-                    PostgreSQL storage.
+                    {description}
                 </p>
             </div>
 
             <Card className="mx-auto max-w-5xl rounded-3xl border-white/10 bg-zinc-950/60">
                 <CardContent className="p-6 sm:p-8">
                     <div className="grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:items-center">
-                        <ArchitectureNode
-                            icon={Globe}
-                            title="Next.js Frontend"
-                            items={[
-                                "React",
-                                "TypeScript",
-                                "React Hook Form",
-                                "Zod",
-                                "Zustand",
-                            ]}
-                        />
-
-                        <FlowArrow />
-
-                        <ArchitectureNode
-                            icon={Server}
-                            title="NestJS API"
-                            items={[
-                                "REST API",
-                                "Authentication",
-                                "OAuth",
-                                "2FA",
-                                "Business Services",
-                            ]}
-                        />
-
-                        <FlowArrow />
-
-                        <ArchitectureNode
-                            icon={Database}
-                            title="PostgreSQL"
-                            items={[
-                                "TypeORM",
-                                "User Data",
-                                "Tasks",
-                                "Focus Sessions",
-                                "Profiles",
-                            ]}
-                        />
+                        {nodes.map((node, index) => (
+                            <div key={node.title} className="contents">
+                                {index > 0 && <FlowArrow />}
+                                <ArchitectureNode {...node} />
+                            </div>
+                        ))}
                     </div>
 
                     <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                        <ArchitectureFeature
-                            icon={LockKeyhole}
-                            title="Secure Sessions"
-                            description="JWT access tokens are kept in httpOnly cookies rather than frontend state."
-                        />
-
-                        <ArchitectureFeature
-                            icon={Brain}
-                            title="Persistent Timer"
-                            description="Timer state uses an absolute end timestamp to survive page refreshes."
-                        />
-
-                        <ArchitectureFeature
-                            icon={Server}
-                            title="Idempotent Persistence"
-                            description="Client session identifiers prevent duplicate focus-session writes."
-                        />
+                        {features.map((feature) => (
+                            <ArchitectureFeature key={feature.title} {...feature} />
+                        ))}
                     </div>
                 </CardContent>
             </Card>
@@ -123,9 +192,7 @@ function ArchitectureNode({
                     <Icon className="h-5 w-5" />
                 </div>
 
-                <h3 className="text-sm font-semibold text-white">
-                    {title}
-                </h3>
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
             </div>
 
             <div className="mt-5 space-y-2">
@@ -163,15 +230,10 @@ function ArchitectureFeature({
         <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
             <div className="flex items-center gap-2">
                 <Icon className="h-4 w-4 text-emerald-400" />
-
-                <h4 className="text-sm font-medium text-white">
-                    {title}
-                </h4>
+                <h4 className="text-sm font-medium text-white">{title}</h4>
             </div>
 
-            <p className="mt-2 text-xs leading-5 text-zinc-600">
-                {description}
-            </p>
+            <p className="mt-2 text-xs leading-5 text-zinc-600">{description}</p>
         </div>
     );
 }
