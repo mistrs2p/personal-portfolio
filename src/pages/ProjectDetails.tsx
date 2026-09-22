@@ -17,6 +17,9 @@ import ProjectScope from "@/components/projects/ProjectScope";
 
 import ProjectImpact from "@/components/projects/ProjectImpact";
 
+import ProjectContext from "@/components/projects/ProjectContext";
+import ProjectWorkflow from "@/components/projects/ProjectWorkflow";
+
 import { projects } from "@/data/projects";
 
 export default function ProjectDetails() {
@@ -159,6 +162,19 @@ export default function ProjectDetails() {
                             gifs={project.gifs}
                         />
                     </div>
+                    <div className="mt-14">
+                        <ProjectContext project={project} />
+                    </div>
+
+                    <div className="mt-14">
+                        <ProjectWorkflow project={project} />
+                    </div>
+
+                    {project.slug === "neco" && (
+                        <div className="mt-14">
+                            <ProjectImpact project={project} />
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
