@@ -53,8 +53,8 @@ export default function Navbar() {
                                 [
                                     "text-sm transition-colors",
                                     isActive
-                                        ? "text-white"
-                                        : "text-zinc-500 hover:text-white",
+                                        ? "text-foreground"
+                                        : "text-muted-foreground hover:text-foreground",
                                 ].join(" ")
                             }
                         >
@@ -114,8 +114,8 @@ export default function Navbar() {
                                     [
                                         "rounded-xl px-4 py-3 text-sm transition-colors",
                                         isActive
-                                            ? "bg-white/10 text-white"
-                                            : "text-zinc-400 hover:bg-white/5 hover:text-white",
+                                            ? "bg-secondary text-foreground"
+                                            : "text-muted-foreground hover:bg-muted hover:text-foreground",
                                     ].join(" ")
                                 }
                             >
