@@ -28,9 +28,9 @@ export default function ProjectCard({
             transition={{ duration: 0.4 }}
             className="h-full"
         >
-            <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-white/10 bg-zinc-950/60 transition-colors hover:border-blue-400/30">
+            <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-border bg-card transition-colors hover:border-blue-400/50">
                 {/* Placeholder image */}
-                <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent">
+                <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent">
                     <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-5xl opacity-50">
                             {project.category.includes("AI") ? "🤖" : "🧩"}
@@ -38,7 +38,7 @@ export default function ProjectCard({
                     </div>
 
                     <div className="absolute left-4 top-4">
-                        <Badge className="border-white/10 bg-black/40 text-zinc-300 backdrop-blur">
+                        <Badge className="border-border bg-background/80 text-foreground backdrop-blur">
                             {project.category}
                         </Badge>
                     </div>
@@ -46,7 +46,7 @@ export default function ProjectCard({
 
                 <CardContent className="flex flex-1 flex-col p-6">
                     <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-white">
+                        <h3 className="text-xl font-semibold text-foreground">
                             {project.title}
                         </h3>
 
@@ -54,7 +54,7 @@ export default function ProjectCard({
                             {project.tagline}
                         </p>
 
-                        <p className="mt-4 line-clamp-4 text-sm leading-6 text-zinc-500">
+                        <p className="mt-4 line-clamp-4 text-sm leading-6 text-muted-foreground">
                             {project.description}
                         </p>
 
@@ -63,7 +63,7 @@ export default function ProjectCard({
                                 <Badge
                                     key={technology}
                                     variant="outline"
-                                    className="border-white/10 bg-white/[0.03] text-xs text-zinc-400"
+                                    className="border-border bg-muted text-xs text-muted-foreground"
                                 >
                                     {technology}
                                 </Badge>
@@ -88,7 +88,7 @@ export default function ProjectCard({
                                 href={project.github}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-400 transition hover:text-white"
+                                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-muted text-muted-foreground transition hover:text-foreground"
                                 aria-label={`Open ${project.title} GitHub repository`}
                             >
                                 <SiGithub className="h-4 w-4" />
