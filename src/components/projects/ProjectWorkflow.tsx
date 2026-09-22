@@ -24,13 +24,15 @@ export default function ProjectWorkflow({
                 </p>
 
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                    From planning to execution
+                    {project.slug === "ketabdaneh"
+                        ? "From events to operational visibility"
+                        : "From planning to execution"}
                 </h2>
 
                 <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-zinc-400">
-                    The Client application connects planning, execution, forms,
-                    tasks, and workflow-driven business processes into a single
-                    operational flow.
+                    {project.slug === "ketabdaneh"
+                        ? "The system connects events, people, responsibilities, assignments, and scheduling into a single operational flow."
+                        : "The Client application connects planning, execution, forms, tasks, and workflow-driven business processes into a single operational flow."}
                 </p>
             </div>
 
