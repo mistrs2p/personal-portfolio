@@ -303,6 +303,8 @@ code {
 }
 
 .dark {
+  color-scheme: dark;
+
   --background: #09090b;
   --foreground: #fafafa;
 
@@ -340,12 +342,12 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      color-mix(in srgb, #3b82f6 12%, transparent),
+      color-mix(in srgb, #3b82f6 6%, transparent),
       transparent 28%
     ),
     radial-gradient(
       circle at 80% 10%,
-      color-mix(in srgb, #a855f7 10%, transparent),
+      color-mix(in srgb, #a855f7 5%, transparent),
       transparent 25%
     ),
     var(--background);
