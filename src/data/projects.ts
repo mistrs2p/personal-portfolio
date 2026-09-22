@@ -2,8 +2,24 @@ export type ProjectStatus =
   | "active"
   | "completed"
   | "production-ready"
-  | "coming-soon";
+  | "coming-soon"
+  | "demo";
+interface ProjectCaseStudy {
+  context?: string;
+  workflow?: string[];
+  highlights?: string[];
 
+  formArchitecture?: {
+    summary?: string;
+
+    layers: {
+      title: string;
+      description: string;
+    }[];
+
+    capabilities: string[];
+  };
+}
 export interface Project {
   slug: string;
   title: string;
@@ -270,48 +286,172 @@ export const projects: Project[] = [
     status: "active",
     featured: true,
   },
-
   {
     slug: "pomodoro",
-    title: "Pomodoro App",
-    category: "Full-Stack",
-    tagline: "Productivity and time management application",
+
+    title: "Pomodoro Focus Workspace",
+
+    category: "Full-Stack Product",
+
+    tagline:
+      "A full-stack productivity workspace built around focused work sessions",
+
     description:
-      "A full-stack productivity application with a dedicated Next.js frontend and NestJS backend.",
+      "A full-stack productivity application designed around focused work sessions, task-based Pomodoro timing, configurable focus profiles, productivity statistics, and secure account management.",
+
+    role: "Full-Stack Developer responsible for designing and implementing the application end-to-end across the Next.js frontend and NestJS backend.",
+
+    scope:
+      "A user-facing productivity workspace combining focused work sessions, task management, configurable focus profiles, progress analytics, authentication, social login, and two-factor security.",
+
+    problem:
+      "The project was created to explore a practical productivity workflow centered around focused work sessions while also providing a realistic full-stack environment for implementing authentication, security, persistence, state management, and production-oriented application structure.",
+
+    solution:
+      "A separate Next.js frontend and NestJS REST API backed by PostgreSQL, combining a persistent client-side timer, user-scoped tasks and sessions, configurable focus profiles, statistics, secure cookie-based authentication, social login, and TOTP-based two-factor authentication.",
+
+    caseStudy: {
+      context:
+        "The first product capability is a Pomodoro-based focus timer, with the broader direction of evolving the application into a practical workspace for focused work and productivity tracking.",
+
+      workflow: [
+        "Create an account or sign in with email/password, Google, or GitHub",
+        "Configure or select a focus profile",
+        "Create and select a task for the focus session",
+        "Start a persistent Pomodoro focus session",
+        "Pause, resume, reset, or recover the session after a page refresh",
+        "Persist completed focus sessions against the authenticated user and task",
+        "Track daily and weekly focus statistics and streaks",
+        "Review profile-based productivity insights",
+      ],
+
+      highlights: [
+        "End-to-end full-stack implementation",
+        "Next.js frontend with React and TypeScript",
+        "NestJS REST API",
+        "PostgreSQL persistence with TypeORM",
+        "Email/password authentication",
+        "Google and GitHub OAuth",
+        "JWT sessions stored in httpOnly cookies",
+        "TOTP-based two-factor authentication",
+        "Persistent refresh-safe Pomodoro timer",
+        "Idempotent focus-session persistence",
+        "Configurable focus profiles",
+        "Daily and weekly productivity analytics",
+        "Automated backend testing",
+      ],
+    },
 
     technologies: [
       "Next.js",
-      "NestJS",
-      "Node.js",
+      "React",
       "TypeScript",
-      "Authentication",
-      "2FA",
-      "Authenticator",
+      "NestJS",
+      "PostgreSQL",
+      "TypeORM",
+      "Tailwind CSS",
+      "React Hook Form",
+      "Zod",
+      "Zustand",
+      "JWT",
+      "OAuth",
+      "TOTP / 2FA",
+      "Jest",
+      "Supertest",
+      "Docker",
     ],
 
     features: [
-      "Pomodoro Timer",
-      "Authentication",
+      "Pomodoro Focus Timer",
+      "Task Management",
+      "Focus Profiles",
+      "Classic / Quick Focus / Deep Work Presets",
+      "Custom Focus Profiles",
+      "Daily Statistics",
+      "Weekly Statistics",
+      "Focus Streaks",
+      "Best Focus Hour",
+      "Profile-based Analytics",
+      "Email / Password Authentication",
+      "Google OAuth",
+      "GitHub OAuth",
       "Two-Factor Authentication",
-      "Authenticator Support",
+      "Authenticator App Support",
+      "Persistent Session Recovery",
+      "Bilingual English / Persian UI",
+      "RTL / LTR Support",
+      "Light / Dark Theme",
     ],
 
     architecture: [
-      "Dedicated Frontend",
-      "Dedicated Backend",
-      "API-based Architecture",
+      "Dedicated Next.js Frontend",
+      "Dedicated NestJS Backend",
+      "REST API Architecture",
+      "PostgreSQL + TypeORM",
+      "Modular NestJS Feature Structure",
+      "Cookie-based JWT Authentication",
+      "Google / GitHub OAuth Strategies",
+      "TOTP Two-Factor Authentication",
+      "Persistent Client-side Timer State Machine",
+      "Versioned Database Migrations",
+      "Dockerized PostgreSQL Development Environment",
     ],
 
-    engineeringDecisions: [],
+    engineeringDecisions: [
+      "Separated frontend and backend into dedicated repositories",
+      "Used secure httpOnly cookies for authenticated access tokens",
+      "Kept JWT handling outside frontend application state",
+      "Implemented a short-lived 2FA challenge before issuing the final authenticated session",
+      "Persisted an absolute timer end timestamp to make the focus session resilient to page refreshes",
+      "Used stable client-generated session identifiers to make session completion idempotent",
+      "Captured immutable focus-profile snapshots when sessions are persisted",
+      "Scoped tasks, sessions, and profiles to the authenticated user",
+      "Disabled TypeORM schema synchronization and used versioned database migrations",
+      "Added automated backend verification with Jest and Supertest",
+    ],
 
-    challenges: [],
+    challenges: [
+      "Keeping the timer accurate and recoverable across page refreshes and interrupted browser sessions",
+      "Designing a secure authentication flow supporting password, OAuth, and two-factor authentication",
+      "Preventing duplicate persistence when focus-session completion requests are retried",
+      "Maintaining user-level ownership boundaries for tasks, profiles, and sessions",
+      "Supporting configurable focus rhythms without allowing profile changes during active sessions",
+    ],
 
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/projects/pomodoro/landing.png",
+        title: "Product Landing Page",
+        description:
+          "Calm, focused landing experience introducing the Pomodoro workspace and its core focus workflow.",
+      },
+      {
+        src: "/projects/pomodoro/dashboard.png",
+        title: "Focus Workspace",
+        description:
+          "Authenticated workspace combining the persistent focus timer, task selection, weekly progress, and productivity statistics.",
+      },
+      {
+        src: "/projects/pomodoro/two-factor-auth.png",
+        title: "Two-Factor Authentication",
+        description:
+          "Authenticator-based 2FA enrollment with QR provisioning, backup secret, verification code, and account security controls.",
+      },
+      {
+        src: "/projects/pomodoro/login-register.png",
+        title: "Login and Registration",
+        description:
+          "Secure login and registration flow with email verification and password reset functionality.",
+      },
+    ],
+
     gifs: [],
 
-    github: "https://github.com/mistrs2p/pomodoro-nest",
+    github: "https://github.com/mistrs2p/pomodoro-next-app",
 
-    status: "active",
+    liveDemo: undefined,
+
+    status: "demo",
     featured: true,
   },
 
@@ -449,44 +589,3 @@ export const projects: Project[] = [
     featured: false,
   },
 ];
-
-interface ProjectCaseStudy {
-  context?: string;
-  workflow?: string[];
-  highlights?: string[];
-}
-
-export interface Project {
-  slug: string;
-  title: string;
-  category: string;
-  tagline: string;
-  description: string;
-
-  role?: string;
-  scope?: string;
-  problem?: string;
-  solution?: string;
-
-  caseStudy?: ProjectCaseStudy;
-
-  technologies: string[];
-
-  features: string[];
-  architecture: string[];
-  engineeringDecisions: string[];
-  challenges: string[];
-
-  screenshots: {
-    src: string;
-    title: string;
-    description?: string;
-  }[];
-  gifs: string[];
-
-  github?: string;
-  liveDemo?: string;
-
-  status: ProjectStatus;
-  featured: boolean;
-}

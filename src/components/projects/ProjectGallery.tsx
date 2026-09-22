@@ -37,18 +37,40 @@ export default function ProjectGallery({
                         Screenshots
                     </h3>
 
-                    <div className="grid gap-5 md:grid-cols-2">
+                    <div className="grid gap-6 md:grid-cols-2">
                         {screenshots.map((screenshot, index) => (
-                            <div key={screenshot.src}>
-                                <motion.img
-                                    src={screenshot.src}
-                                    alt={screenshot.title}
-                                />
+                            <motion.figure
+                                key={screenshot.src}
+                                initial={{ opacity: 0, y: 16 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-80px" }}
+                                transition={{
+                                    duration: 0.45,
+                                    delay: index * 0.05,
+                                }}
+                                className="group overflow-hidden rounded-3xl border border-white/10 bg-zinc-950/60"
+                            >
+                                <div className="overflow-hidden bg-black">
+                                    <img
+                                        src={screenshot.src}
+                                        alt={screenshot.title}
+                                        loading={index === 0 ? "eager" : "lazy"}
+                                        className="block w-full transition duration-500 group-hover:scale-[1.02]"
+                                    />
+                                </div>
 
-                                <h3>{screenshot.title}</h3>
+                                <figcaption className="p-5">
+                                    <h4 className="text-sm font-semibold text-white">
+                                        {screenshot.title}
+                                    </h4>
 
-                                <p>{screenshot.description}</p>
-                            </div>
+                                    {screenshot.description && (
+                                        <p className="mt-2 text-sm leading-6 text-zinc-500">
+                                            {screenshot.description}
+                                        </p>
+                                    )}
+                                </figcaption>
+                            </motion.figure>
                         ))}
                     </div>
                 </div>
