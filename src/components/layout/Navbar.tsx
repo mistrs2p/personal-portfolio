@@ -28,8 +28,12 @@ export default function Navbar() {
                     onClick={() => setOpen(false)}
                     className="group flex items-center gap-3"
                 >
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-muted text-sm font-bold text-foreground transition group-hover:border-blue-400/40 group-hover:bg-blue-400/10">
-                        MM
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-muted p-1 transition group-hover:border-blue-400/40 group-hover:bg-blue-400/10">
+                        <img
+                            src="/favicon.svg"
+                            alt="Arayina"
+                            className="h-full w-full object-contain"
+                        />
                     </div>
 
                     <div className="hidden sm:block">
