@@ -29,13 +29,22 @@ export default function ProjectCard({
             className="h-full"
         >
             <Card className="group flex h-full flex-col overflow-hidden rounded-3xl border-border bg-card transition-colors hover:border-blue-400/50">
-                {/* Placeholder image */}
-                <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-5xl opacity-50">
-                            {project.category.includes("AI") ? "🤖" : "🧩"}
-                        </span>
-                    </div>
+                <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-muted">
+                    {project.thumbnail ? (
+                        <img
+                            src={project.thumbnail}
+                            alt={project.title + " preview"}
+                            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                            loading="lazy"
+                        />
+                    ) : (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-500/10 via-violet-500/5 to-transparent">
+                            <span className="text-5xl opacity-50">
+                                {project.category.includes("AI") ? "🤖" : "🧩"}
+                            </span>
+                        </div>
+                    )}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
 
                     <div className="absolute left-4 top-4">
                         <Badge className="border-border bg-background/80 text-foreground backdrop-blur">

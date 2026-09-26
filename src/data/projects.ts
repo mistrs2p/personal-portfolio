@@ -25,6 +25,7 @@ export interface ProjectCaseStudy {
 export interface Project {
   slug: string;
   title: string;
+  thumbnail?: string;
   category: string;
   tagline: string;
   description: string;
@@ -67,6 +68,7 @@ export const projects: Project[] = [
   {
     slug: "neco",
     title: "Neco Management Platform",
+    thumbnail: "/projects/neco/thumbnail.webp",
     category: "Enterprise Project & Process Management",
     tagline: "Client application for complex industrial project workflows",
 
@@ -277,6 +279,7 @@ export const projects: Project[] = [
     slug: "pomodoro",
 
     title: "Pomodoro Focus Workspace",
+    thumbnail: "/projects/pomodoro/landing.png",
 
     category: "Full-Stack Product",
 
@@ -454,6 +457,7 @@ export const projects: Project[] = [
   {
     slug: "ketabdaneh",
     title: "Ketabdaneh",
+    thumbnail: "/projects/ketabdaneh/thumbnail.webp",
     category: "Full-Stack / Systems",
     tagline: "Branch operations management system",
 
