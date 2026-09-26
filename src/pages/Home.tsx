@@ -74,12 +74,25 @@ export default function Home() {
 
             <section className="relative mx-auto max-w-7xl px-6 pb-24 pt-20 lg:px-8 lg:pb-32 lg:pt-28">
                 <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-                    {/* Hero Content */}
+                    {/* Hero Visual */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                    >Hero Content</motion.div>
+                        className="relative w-full overflow-hidden rounded-[30px] border border-border bg-card shadow-2xl"
+                    >
+                        <div className="absolute -inset-8 rounded-[40px] bg-linear-to-br from-blue-500/15 via-violet-500/10 to-transparent blur-3xl" />
+
+                        <div className="relative aspect-video overflow-hidden">
+                            <img
+                                src="/projects/hero/arayina-hero.webp"
+                                alt="Arayina Software Engineer"
+                                className="h-full w-full object-cover"
+                                fetchPriority="high"
+                            />
+                            <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-background/10 via-transparent to-transparent" />
+                        </div>
+                    </motion.div>
                     <div>
                         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-400 backdrop-blur">
                             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
