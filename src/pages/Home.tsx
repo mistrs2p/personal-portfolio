@@ -85,7 +85,7 @@ export default function Home() {
 
                         <div className="relative aspect-video overflow-hidden">
                             <img
-                                src="/projects/hero/arayina-hero.webp"
+                                src="/projects/hero/arayina-hero.png"
                                 alt="Arayina Software Engineer"
                                 className="h-full w-full object-cover"
                                 fetchPriority="high"
