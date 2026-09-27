@@ -5,7 +5,8 @@ import {
     RefreshCw,
 } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 // import type { Project } from "@/data/projects";
 
 // interface ProjectImpactProps {
@@ -42,7 +43,8 @@ const impactItems = [
 // export default function ProjectImpact({
 //     project,
 // }: ProjectImpactProps) {
-export default function ProjectImpact() {\n    const { t } = useTranslation();
+export default function ProjectImpact() {
+    const { t } = useTranslation();
     return (
         <section>
             <div className="mb-6">
