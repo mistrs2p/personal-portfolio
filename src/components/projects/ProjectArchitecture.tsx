@@ -1,14 +1,15 @@
-import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
-interface Project{t("projectDetails.tabs.architecture")}Props {
+interface ProjectArchitectureProps {
     project: Project;
 }
 
 export default function ProjectArchitecture({
     project,
-}: ProjectArchitectureProps) {\n    const { t } = useTranslation();
+}: ProjectArchitectureProps) {
     return (
         <ProjectArchitectureList
             items={project.architecture}
@@ -21,11 +22,12 @@ function ProjectArchitectureList({
 }: {
     items: string[];
 }) {
+    const { t } = useTranslation();
     return (
         <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
             <CardContent className="p-6">
                 <h2 className="text-xl font-semibold text-white">
-                    Architecture
+                    {t("projectDetails.tabs.architecture")}
                 </h2>
 
                 {items.length > 0 ? (
