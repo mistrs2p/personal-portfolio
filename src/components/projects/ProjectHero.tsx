@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { motion } from "motion/react";
-import { Link } from "react-router";
+import { Link } from "react-router";\nimport { useTranslation } from "react-i18next";
 
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/data/projects";
@@ -12,7 +12,7 @@ interface ProjectHeroProps {
 
 export default function ProjectHero({
     project,
-}: ProjectHeroProps) {
+}: ProjectHeroProps) {\n    const { t } = useTranslation();
     return (
         <>
             <Link
@@ -20,7 +20,7 @@ export default function ProjectHero({
                 className="inline-flex items-center text-sm text-zinc-500 transition hover:text-white"
             >
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Projects
+                {t("projectDetails.backToProjects")}
             </Link>
 
             <motion.div
