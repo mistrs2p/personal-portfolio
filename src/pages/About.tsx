@@ -7,38 +7,33 @@ import {
     Users,
 } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 import { buttonVariants } from "@/components/ui/button";
 
 const focusAreas = [
     {
+        key: "frontend",
         icon: Code2,
-        title: "Frontend Engineering",
-        description:
-            "Building modern, modular, and maintainable web interfaces with React, Next.js, Vue.js, and TypeScript.",
     },
     {
+        key: "fullStack",
         icon: Layers3,
-        title: "Full-Stack Development",
-        description:
-            "Working across APIs, backend services, databases, and frontend applications to build complete products.",
     },
     {
+        key: "ai",
         icon: BrainCircuit,
-        title: "AI Engineering",
-        description:
-            "Exploring LLM applications, RAG, embeddings, vector search, and practical AI integration.",
     },
     {
+        key: "production",
         icon: Rocket,
-        title: "Production & Deployment",
-        description:
-            "Working with Linux, Docker, Nginx, CI/CD, and production-oriented application environments.",
     },
-];
+] as const;
 
 export default function About() {
+    const { t } = useTranslation();
+
     return (
         <div className="relative min-h-screen overflow-hidden">
             <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[140px]" />
@@ -49,17 +44,15 @@ export default function About() {
                     animate={{ opacity: 1, y: 0 }}
                 >
                     <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                        About me
+                        {t("about.eyebrow")}
                     </p>
 
                     <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                        Building software beyond the interface.
+                        {t("about.heroTitle")}
                     </h1>
 
                     <p className="mt-6 max-w-3xl text-base leading-8 text-zinc-400 sm:text-lg">
-                        I&apos;m a Senior Frontend and Full-Stack Developer with
-                        extensive experience building web applications and working
-                        across the full software development lifecycle.
+                        {t("about.heroDescription")}
                     </p>
                 </motion.div>
 
@@ -71,28 +64,13 @@ export default function About() {
                         className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9"
                     >
                         <h2 className="text-xl font-semibold text-white">
-                            How I work
+                            {t("about.howIWork.title")}
                         </h2>
 
                         <div className="mt-6 space-y-5 text-sm leading-7 text-zinc-500">
-                            <p>
-                                I enjoy taking a product from requirements and technical
-                                design through frontend and backend development, database
-                                integration, testing, deployment, and production support.
-                            </p>
-
-                            <p>
-                                My main background is in JavaScript and TypeScript, with
-                                experience across modern frontend frameworks, backend
-                                technologies, databases, infrastructure, and AI-powered
-                                applications.
-                            </p>
-
-                            <p>
-                                I also value collaboration, technical discussions,
-                                knowledge sharing, continuous learning, and creating an
-                                environment where team members can grow together.
-                            </p>
+                            <p>{t("about.howIWork.paragraph1")}</p>
+                            <p>{t("about.howIWork.paragraph2")}</p>
+                            <p>{t("about.howIWork.paragraph3")}</p>
                         </div>
 
                         <Link
@@ -102,8 +80,8 @@ export default function About() {
                                     "mt-8 rounded-xl bg-white text-black hover:bg-zinc-200",
                             })}
                         >
-                            View my experience
-                            <ArrowRight className="ml-2 h-4 w-4" />
+                            {t("about.howIWork.cta")}
+                            <ArrowRight className="ml-2 h-4 w-4 rtl:mr-2 rtl:ml-0 rtl:rotate-180" />
                         </Link>
                     </motion.section>
 
@@ -118,14 +96,11 @@ export default function About() {
                         </div>
 
                         <h2 className="mt-5 text-xl font-semibold text-white">
-                            Team & Knowledge Sharing
+                            {t("about.team.title")}
                         </h2>
 
                         <p className="mt-4 text-sm leading-7 text-zinc-500">
-                            Alongside software development, I have participated in
-                            technical meetings, planning sessions, knowledge-sharing
-                            activities, and English learning sessions within team
-                            environments.
+                            {t("about.team.description")}
                         </p>
                     </motion.section>
                 </div>
@@ -136,7 +111,7 @@ export default function About() {
 
                         return (
                             <motion.div
-                                key={item.title}
+                                key={item.key}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -148,11 +123,11 @@ export default function About() {
                                 </div>
 
                                 <h3 className="mt-5 text-base font-semibold text-white">
-                                    {item.title}
+                                    {t(`about.focusAreas.${item.key}.title`)}
                                 </h3>
 
                                 <p className="mt-2 text-sm leading-6 text-zinc-500">
-                                    {item.description}
+                                    {t(`about.focusAreas.${item.key}.description`)}
                                 </p>
                             </motion.div>
                         );
