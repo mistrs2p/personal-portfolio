@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
@@ -8,12 +8,12 @@ interface ProjectChallengesProps {
 
 export default function ProjectChallenges({
     project,
-}: ProjectChallengesProps) {
+}: ProjectChallengesProps) {\n    const { t } = useTranslation();
     return (
         <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
             <CardContent className="p-6">
                 <h2 className="text-xl font-semibold text-white">
-                    Challenges & Solutions
+                    {t("projectDetails.challenges")}
                 </h2>
 
                 {project.challenges.length > 0 ? (
@@ -31,7 +31,7 @@ export default function ProjectChallenges({
                     </div>
                 ) : (
                     <p className="mt-5 text-sm text-zinc-600">
-                        Challenges and solutions will be added soon.
+                        {t("projectDetails.challengesSoon")}
                     </p>
                 )}
             </CardContent>
