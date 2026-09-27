@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
@@ -8,7 +9,8 @@ interface ProjectFeaturesProps {
 
 export default function ProjectFeatures({
     project,
-}: ProjectFeaturesProps) {\n    const { t } = useTranslation();
+}: ProjectFeaturesProps) {
+    const { t } = useTranslation();
     return (
         <ProjectList
             title={t("projectDetails.features")}
