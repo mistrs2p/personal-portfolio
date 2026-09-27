@@ -116,6 +116,47 @@ const en = {
       },
     },
   },
+  experience: {
+    eyebrow: "Career",
+    title: "Professional Experience",
+    description:
+      "A timeline of my professional work across frontend engineering, backend development, web development, and software engineering.",
+    roles: {
+      neco: "Frontend Developer",
+      risloo: "Backend / Database Developer",
+      orchid: "Frontend Developer",
+      majazeh: "Web Designer / JavaScript Developer",
+      ermile: "Web Development / IT Training",
+    },
+    highlights: {
+      neco: {
+        "1": "Develop and maintain web applications.",
+        "2": "Build user interfaces and implement new features.",
+        "3": "Collaborate on technical analysis, development, and troubleshooting.",
+        "4": "Participate in technical meetings, planning, and knowledge sharing.",
+      },
+      risloo: {
+        "1": "Develop backend services using Node.js.",
+        "2": "Design and develop APIs.",
+        "3": "Work with databases and implement data access logic.",
+        "4": "Collaborate on the development and maintenance of software services.",
+      },
+      orchid: {
+        "1": "Develop user interfaces using Vue.js and Nuxt.js.",
+        "2": "Implement product pages and features.",
+        "3": "Collaborate in frontend development and improvement.",
+      },
+      majazeh: {
+        "1": "Design and develop web pages.",
+        "2": "Implement interactive features using JavaScript.",
+        "3": "Develop and improve user interfaces.",
+      },
+      ermile: {
+        "1": "Provide practical training in HTML, CSS, JavaScript, Photoshop, and ICDL.",
+        "2": "Gain practical experience in web development.",
+      },
+    },
+  },
 } as const;
 
 export default en;
