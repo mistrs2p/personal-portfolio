@@ -4,7 +4,8 @@ import {
 
 import { SiGithub as Github } from "@icons-pack/react-simple-icons";
 
-import { buttonVariants } from "@/components/ui/button";\nimport { useTranslation } from "react-i18next";
+import { buttonVariants } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import type { Project } from "@/data/projects";
 
 interface ProjectLinksProps {
@@ -13,7 +14,8 @@ interface ProjectLinksProps {
 
 export default function ProjectLinks({
     project,
-}: ProjectLinksProps) {\n    const { t } = useTranslation();
+}: ProjectLinksProps) {
+    const { t } = useTranslation();
     const hasRepositories = Boolean(
         project.repositories?.length,
     );
