@@ -1,4 +1,4 @@
-import { BriefcaseBusiness } from "lucide-react";
+import { BriefcaseBusiness } from "lucide-react";\nimport { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +9,7 @@ interface ProjectContextProps {
 
 export default function ProjectContext({
     project,
-}: ProjectContextProps) {
+}: ProjectContextProps) {\n    const { t } = useTranslation();
     if (!project.caseStudy?.context) {
         return null;
     }
@@ -18,11 +18,11 @@ export default function ProjectContext({
         <section>
             <div className="mb-6">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                    Product Context
+                    {t("projectDetails.context.eyebrow")}
                 </p>
 
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                    Understanding the product behind the interface
+                    {t("projectDetails.context.title")}
                 </h2>
             </div>
 
