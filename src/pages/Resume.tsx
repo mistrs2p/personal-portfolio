@@ -1,6 +1,7 @@
 import { Download, ExternalLink, FileText } from "lucide-react";
 import {SiGithub as Github} from "@icons-pack/react-simple-icons";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { buttonVariants } from "@/components/ui/button";
 import { experiences } from "@/data/experience";
 import { projects } from "@/data/projects";
@@ -31,6 +32,8 @@ const skillGroups = [
 ];
 
 export default function Resume() {
+  const { t } = useTranslation();
+
   const selectedProjects = projects.filter((project) =>
     ["neco", "pomodoro", "ketabdaneh", "ai-chat"].includes(project.slug),
   );
@@ -106,17 +109,20 @@ export default function Resume() {
                 <article key={experience.company} className="border-l border-white/10 pl-6">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                     <div>
-                      <h3 className="text-lg font-medium text-white">{experience.role}</h3>
+                      <h3 className="text-lg font-medium text-white">{t(`experience.roles.${experience.roleKey}`)}</h3>
                       <p className="text-sm text-blue-400">{experience.company}</p>
                     </div>
                     <span className="text-sm text-zinc-600">{experience.period}</span>
                   </div>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-zinc-500">
-                    {experience.highlights.map((highlight) => (
+                    {experience.highlightKeys.map((highlightKey) => {
+                      const highlight = t(`experience.highlights.${highlightKey}`);
+                      return (
                       <li key={highlight} className="relative pl-4 before:absolute before:left-0 before:top-3 before:h-1 before:w-1 before:rounded-full before:bg-zinc-600">
                         {highlight}
                       </li>
-                    ))}
+                      );
+                    })}
                   </ul>
                 </article>
               ))}
