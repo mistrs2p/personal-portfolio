@@ -1,14 +1,14 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
-interface ProjectArchitectureProps {
+interface Project{t("projectDetails.tabs.architecture")}Props {
     project: Project;
 }
 
 export default function ProjectArchitecture({
     project,
-}: ProjectArchitectureProps) {
+}: ProjectArchitectureProps) {\n    const { t } = useTranslation();
     return (
         <ProjectArchitectureList
             items={project.architecture}
@@ -41,7 +41,7 @@ function ProjectArchitectureList({
                     </div>
                 ) : (
                     <p className="mt-5 text-sm text-zinc-600">
-                        Details will be added soon.
+                        {t("projectDetails.detailsSoon")}
                     </p>
                 )}
             </CardContent>
