@@ -7,6 +7,7 @@ import {
     LockKeyhole,
     Server,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -18,99 +19,103 @@ interface ProjectSystemArchitectureProps {
 export default function ProjectSystemArchitecture({
     project,
 }: ProjectSystemArchitectureProps) {
+    const { t } = useTranslation();
+
     if (project.slug === "pomodoro") {
-        return <PomodoroArchitecture />;
+        return <PomodoroArchitecture t={t} />;
     }
 
     if (project.slug === "ketabdaneh") {
-        return <KetabdanehArchitecture />;
+        return <KetabdanehArchitecture t={t} />;
     }
 
     return null;
 }
 
-function PomodoroArchitecture() {
+type Translate = (key: string) => string;
+
+function PomodoroArchitecture({ t }: { t: Translate }) {
     return (
         <ArchitectureSection
-            eyebrow="System Architecture"
+            eyebrow={t("projectDetails.systemArchitecture.eyebrow")}
             title="Next.js → NestJS → PostgreSQL"
-            description="A separated full-stack architecture with a dedicated web client, REST API, authentication layer, and persistent PostgreSQL storage."
+            description={t("projectDetails.systemArchitecture.pomodoro.description")}
             nodes={[
                 {
                     icon: Globe,
-                    title: "Next.js Frontend",
+                    title: t("projectDetails.systemArchitecture.pomodoro.frontend"),
                     items: ["React", "TypeScript", "React Hook Form", "Zod", "Zustand"],
                 },
                 {
                     icon: Server,
-                    title: "NestJS API",
+                    title: t("projectDetails.systemArchitecture.pomodoro.backend"),
                     items: ["REST API", "Authentication", "OAuth", "2FA", "Business Services"],
                 },
                 {
                     icon: Database,
-                    title: "PostgreSQL",
+                    title: t("projectDetails.systemArchitecture.pomodoro.database"),
                     items: ["TypeORM", "User Data", "Tasks", "Focus Sessions", "Profiles"],
                 },
             ]}
             features={[
                 {
                     icon: LockKeyhole,
-                    title: "Secure Sessions",
-                    description: "JWT access tokens are kept in httpOnly cookies rather than frontend state.",
+                    title: t("projectDetails.systemArchitecture.pomodoro.secureSessions.title"),
+                    description: t("projectDetails.systemArchitecture.pomodoro.secureSessions.description"),
                 },
                 {
                     icon: Brain,
-                    title: "Persistent Timer",
-                    description: "Timer state uses an absolute end timestamp to survive page refreshes.",
+                    title: t("projectDetails.systemArchitecture.pomodoro.persistentTimer.title"),
+                    description: t("projectDetails.systemArchitecture.pomodoro.persistentTimer.description"),
                 },
                 {
                     icon: Server,
-                    title: "Idempotent Persistence",
-                    description: "Client session identifiers prevent duplicate focus-session writes.",
+                    title: t("projectDetails.systemArchitecture.pomodoro.idempotentPersistence.title"),
+                    description: t("projectDetails.systemArchitecture.pomodoro.idempotentPersistence.description"),
                 },
             ]}
         />
     );
 }
 
-function KetabdanehArchitecture() {
+function KetabdanehArchitecture({ t }: { t: Translate }) {
     return (
         <ArchitectureSection
-            eyebrow="System Architecture"
+            eyebrow={t("projectDetails.systemArchitecture.eyebrow")}
             title="Next.js → FastAPI → PostgreSQL"
-            description="A modular monolith with a typed web client, backend-owned business rules and authorization, relational persistence, and production-oriented background and edge infrastructure."
+            description={t("projectDetails.systemArchitecture.ketabdaneh.description")}
             nodes={[
                 {
                     icon: Globe,
-                    title: "Next.js Frontend",
+                    title: t("projectDetails.systemArchitecture.ketabdaneh.frontend"),
                     items: ["React", "TypeScript", "next-intl", "Typed API Client", "RTL / LTR"],
                 },
                 {
                     icon: Server,
-                    title: "FastAPI Backend",
+                    title: t("projectDetails.systemArchitecture.ketabdaneh.backend"),
                     items: ["REST API", "Modular Monolith", "JWT Auth", "RBAC", "Domain Services"],
                 },
                 {
                     icon: Database,
-                    title: "PostgreSQL",
+                    title: t("projectDetails.systemArchitecture.ketabdaneh.database"),
                     items: ["SQLAlchemy", "Alembic", "People", "Events", "Assignments"],
                 },
             ]}
             features={[
                 {
                     icon: Bell,
-                    title: "Background Delivery",
-                    description: "Redis and ARQ move notification delivery out of business request paths with bounded retries.",
+                    title: t("projectDetails.systemArchitecture.ketabdaneh.backgroundDelivery.title"),
+                    description: t("projectDetails.systemArchitecture.ketabdaneh.backgroundDelivery.description"),
                 },
                 {
                     icon: LockKeyhole,
-                    title: "Hardened Edge",
-                    description: "Caddy is the public edge while API, database, Redis, and internal metrics stay behind the container network.",
+                    title: t("projectDetails.systemArchitecture.ketabdaneh.hardenedEdge.title"),
+                    description: t("projectDetails.systemArchitecture.ketabdaneh.hardenedEdge.description"),
                 },
                 {
                     icon: Activity,
-                    title: "Operational Readiness",
-                    description: "Liveness, readiness, metrics, deployment verification, and backup/restore tooling support safer operations.",
+                    title: t("projectDetails.systemArchitecture.ketabdaneh.operationalReadiness.title"),
+                    description: t("projectDetails.systemArchitecture.ketabdaneh.operationalReadiness.description"),
                 },
             ]}
         />
