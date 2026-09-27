@@ -1,74 +1,108 @@
-%PDF-1.3
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%PDF-1.4
 1 0 obj
-<<
-/F1 2 0 R /F2 3 0 R
->>
+<< /Type /Catalog /Pages 3 0 R >>
 endobj
 2 0 obj
-<<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 3 0 obj
-<<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
->>
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
 endobj
 4 0 obj
-<<
-/Contents 8 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 7 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 5 0 obj
-<<
-/PageMode /UseNone /Pages 7 0 R /Type /Catalog
->>
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 2 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<<
-/Author (anonymous) /CreationDate (D:20260927101805+00'00') /Creator (anonymous) /Keywords () /ModDate (D:20260927101805+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (unspecified) /Title (untitled) /Trapped /False
->>
+<< /Length 3404 >>
+stream
+BT /F2 16 Tf 45 800 Td (Mahdi Mousavi) Tj ET
+BT /F1 9 Tf 45 782 Td (Senior Frontend / Full-Stack Developer) Tj ET
+BT /F1 8 Tf 45 768 Td (12 Years Experience | Qom, Iran | MahdiMousavi40@gmail.com | +98 937 121 1186) Tj ET
+BT /F1 8 Tf 45 754 Td (GitHub: github.com/mistrs2p | Portfolio: intro.aromerald.ir) Tj ET
+BT /F2 11 Tf 45 734 Td (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 8 Tf 45 716 Td (Senior Frontend / Full-Stack Developer with 12 years of experience building web) Tj ET
+BT /F1 8 Tf 45 702 Td (applications across the full product lifecycle. Strong focus on React, TypeScript,) Tj ET
+BT /F1 8 Tf 45 688 Td (Vue.js and modern frontend architecture, with hands-on backend experience in Node.js,) Tj ET
+BT /F1 8 Tf 45 674 Td (NestJS and FastAPI. Experienced in enterprise platforms, reusable UI architecture,) Tj ET
+BT /F1 8 Tf 45 660 Td (data-heavy interfaces, API integration, production deployment, and AI/LLM integration.) Tj ET
+BT /F2 11 Tf 45 640 Td (CORE SKILLS) Tj ET
+BT /F1 8 Tf 45 622 Td (Frontend: React, Next.js, Vue.js, Vite, TypeScript, JavaScript, Tailwind CSS, Mantine, AG Grid) Tj ET
+BT /F1 8 Tf 45 608 Td (Backend: Node.js, NestJS, Express.js, FastAPI, REST APIs, Socket.IO) Tj ET
+BT /F1 8 Tf 45 594 Td (Data & Architecture: PostgreSQL, MySQL, MongoDB, SQLite, Prisma, TypeORM, SQLAlchemy,) Tj ET
+BT /F1 8 Tf 45 580 Td (Repository Pattern, Modular Architecture, SOLID) Tj ET
+BT /F1 8 Tf 45 566 Td (DevOps & Tools: Docker, Docker Compose, Linux, Nginx, IIS, GitHub Actions, Git, Playwright,) Tj ET
+BT /F1 8 Tf 45 552 Td (Postman, Swagger/OpenAPI) Tj ET
+BT /F1 8 Tf 45 538 Td (AI / LLM: LLM APIs, RAG, Embeddings, Vector Search, AI Integration, AI-assisted Development) Tj ET
+BT /F2 11 Tf 45 518 Td (PROFESSIONAL EXPERIENCE) Tj ET
+BT /F1 8 Tf 45 500 Td (Neco Industry Management Company | Frontend Developer | 2020 - Present) Tj ET
+BT /F1 8 Tf 45 486 Td (- Own and develop the frontend of a large multi-module enterprise management platform.) Tj ET
+BT /F1 8 Tf 45 472 Td (- Proposed and led the Vue.js to React migration with Vite and modernized application structure.) Tj ET
+BT /F1 8 Tf 45 458 Td (- Designed Repository Pattern API architecture and a reusable Dynamic Form Generator.) Tj ET
+BT /F1 8 Tf 45 444 Td (- Built AG Grid server-side pagination, filtering, sorting, search, bulk actions and exports.) Tj ET
+BT /F1 8 Tf 45 430 Td (- Implemented workflow, Kanban, Program Designer, dynamic forms, localization and AI integration.) Tj ET
+BT /F1 8 Tf 45 416 Td (- Perform code reviews, mentor developers, and handle production deployment on IIS.) Tj ET
+BT /F1 8 Tf 45 402 Td (Risloo | Backend / Database Developer | 2023 - 2024) Tj ET
+BT /F1 8 Tf 45 388 Td (- Developed Node.js APIs and worked on database design, queries, integration and maintenance.) Tj ET
+BT /F1 8 Tf 45 374 Td (Orchid Pharmed / Bornafit Dr. Kaviani | Frontend Developer | 2019 - 2020) Tj ET
+BT /F1 8 Tf 45 360 Td (- Built and maintained Vue.js and Nuxt.js interfaces with API-driven application flows.) Tj ET
+BT /F1 8 Tf 45 346 Td (Majazeh Company | Web Designer / JavaScript Developer | 2018 - 2019) Tj ET
+BT /F1 8 Tf 45 332 Td (- Developed interactive web interfaces and JavaScript-based functionality.) Tj ET
+BT /F1 8 Tf 45 318 Td (Ermile Company | Web Development / IT Training | 2016 - 2018) Tj ET
+BT /F1 8 Tf 45 304 Td (- Worked on web development projects and delivered IT/web development training.) Tj ET
+endstream
 endobj
 7 0 obj
-<<
-/Count 1 /Kids [ 4 0 R ] /Type /Pages
->>
+<< /Type /Page /Parent 3 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 2 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 1606
->>
+<< /Length 2737 >>
 stream
-Gat=+?$#!`'RekGEM#:/LBrCajJ`9PX:kXd3,Kc6,&C\Pg6P6pPH`LXheUmOUrb/.L)DNMq];;L5;C!iO/]mX!oPP_iO&uh"n<@%LH#jk+H4)!I1%U>DgBD#AoGODM.,)/"ocRcJ`iF4(\%#Zh5)+Z78qY_rX6Z*&HDT=&:mLaA/"9!#!J=*Y%)7"CK>I!iED+:Yqh"V>W6qWYuW^W)lDtYje?2srb4CZ)3skbd"&VEebCl!'+ipg>`JSS'Ea.:/^^f"e2)-(hm.k)S0XiET/*Qmc)//l(;*\R[]9AE>Q9nnASC#`C2k9=_QufNkX/k@BNqZtJCjpM6'XD['*aq\k:&&?G\.nf<L*0/.PAj^BHflN_m\0C!#lVT02eh6L=WFI!0tZd/!d,'1;#u@Uo__X^0mc]n'CskGi$LcY$mAPcRQlT?n7BEO''8Vd6nEdhH+Na87(6n9eojC?8Hh^n1N`I6Q0Oe!KSJ`pd?I@o91u<pO%mlAtA,&5F:=Y$KmVZIGhZmJ`N=I!hqGe0KSnE8gV_aWt\5q;:0CpIp&(eM!dVql[?s\$s\$Ma_H4fPe)lBgelEYJ&U_YLsF4Ek=3[dC%')<JF"$WYKeR2gEPk%No$K>L(oq8.LXf/>R=Q]/QXWk"R[sRBZX%i1e0^9E=1DTL`cCe?YLSGGIDiOj<#5e;c`Lk7.WdUV,+IVV,'p?%b2Pi68\fW"D1.`PQfCdB;!tkG3oj8(h-'^fk/nfSCbX^B1Aj>"N9i4NdMgA^<WLqGR!KGBJs(e)lkTGrYr=J%pcoHigd\1nq]=+Hc*EF-N<lN4Xc9d=;[YjH?c`%&)(,eR'$N.hnY64km<V\cQFIilfe!BHO4bUG0"`*X';qL^/UI-[GJNm[2L]n!Na.\%(O0f[D4^9M&*#IS.RK'UEeW-"oJM`UWR`d92V``ZLt[EEnPXQXB/kWKdbhj>)=PkVLiuK/6;NALN/pP=L#nFYtEMN$-`8m<ER>b_5TfT4u#40O)L.=3L0&.K`I$61d,EiEf#L(T]=%`(0,bhdoI;GJ/L#0(Xs*k.:/_S28.u6CU8S3U8t6,J)*MM3ScnmT'^L#Q)('!T&Q/M)3_s,`CeYYe9NaRhtf@alljSbpQt8Kn$LX?#!H1,=PEJF2U7C:2Z5LKS'@V.o?j8W\+^]GY-HrkoJlBd9IpF<d`?G)VA.=m8K:J+)t>M_cH[u]pCF'B(XRjY4ERr&MFZ_f`+srJ%E5#$<&mr_+c@#Nij;#l-g2P`'ST)3I)AN/PdkDm/_Wu>o^*;nHVhAj')7E,$d_B1&?P@"\tN<Zj&;&B9or@Fl],C48SO#]\1@+:A6/$<XKAk`0$V]ck*X)nrSTPB-9J4g#TOa"/_[d>1qDT^Qka0O+%c@Jd4fWZ/6F7(XIu=):*1hC3*OPPNWI$\d(!F1k`rU`k'.Zgbb@-g@L8".dhEiqrkp'_&$-uhHpj]f1#(YPH9sW=A/!k/3W`@gg!:]Z%32-Y8=X^]OP2EDB$%1i\]FJW$>B=(l_pJrT8i"m&*'/Klm/lBs1ei"TC]W)[A=RA9H"pZ+0GFBmGP=#/WMb6VN20(LD\o-rJuG3Y\r&e_2aJkQ[]&28<MR~>endstream
+BT /F2 11 Tf 45 800 Td (SELECTED PROJECTS) Tj ET
+BT /F1 8 Tf 45 782 Td (Neco - Enterprise Management Platform) Tj ET
+BT /F1 8 Tf 45 768 Td (Stack: React, TypeScript, Vite, Mantine, AG Grid, REST API, AI Integration) Tj ET
+BT /F1 8 Tf 45 754 Td (Enterprise project/process management platform. Frontend ownership includes migration to React,) Tj ET
+BT /F1 8 Tf 45 740 Td (reusable form architecture, Repository Pattern, server-side data grids, workflow/Kanban, Program) Tj ET
+BT /F1 8 Tf 45 726 Td (Designer, localization, AI integration, and production deployment.) Tj ET
+BT /F1 8 Tf 45 706 Td (Pomodoro - Productivity & Authentication Platform) Tj ET
+BT /F1 8 Tf 45 692 Td (Stack: Next.js, NestJS, PostgreSQL, TypeORM, JWT, OAuth, TOTP 2FA) Tj ET
+BT /F1 8 Tf 45 678 Td (End-to-end productivity application with secure httpOnly-cookie sessions, Google/GitHub OAuth,) Tj ET
+BT /F1 8 Tf 45 664 Td (TOTP 2FA, persistent timer recovery, idempotent completion, tasks, analytics, bilingual UI, tests,) Tj ET
+BT /F1 8 Tf 45 650 Td (migrations and Dockerized development.) Tj ET
+BT /F1 8 Tf 45 630 Td (Ketabdaneh - Full-Stack Management Platform) Tj ET
+BT /F1 8 Tf 45 616 Td (Stack: Next.js, FastAPI, PostgreSQL, SQLAlchemy, Redis, ARQ, Docker, Caddy) Tj ET
+BT /F1 8 Tf 45 602 Td (Full-stack modular platform designed and implemented end-to-end. Includes events, assignments,) Tj ET
+BT /F1 8 Tf 45 588 Td (calendar, notifications, RBAC, background jobs, health checks, observability, backup/restore,) Tj ET
+BT /F1 8 Tf 45 574 Td (CI/CD and bilingual RTL/LTR support. Production-oriented infrastructure is containerized.) Tj ET
+BT /F1 8 Tf 45 554 Td (AI Chat - LLM Chat Application) Tj ET
+BT /F1 8 Tf 45 540 Td (Stack: Next.js, React, TypeScript, Tailwind CSS, OpenRouter, Vercel AI SDK, Zustand) Tj ET
+BT /F1 8 Tf 45 526 Td (AI chat application with server-side API key handling, multi-turn context, streaming responses,) Tj ET
+BT /F1 8 Tf 45 512 Td (persistent client state, stop generation, regenerate, and conversation/message management.) Tj ET
+BT /F2 11 Tf 45 492 Td (EDUCATION) Tj ET
+BT /F1 8 Tf 45 474 Td (MSc - Engineering Management | Islamic Azad University, Central Tehran) Tj ET
+BT /F1 8 Tf 45 460 Td (BSc - Industrial Engineering | Qom University of Technology) Tj ET
+BT /F2 11 Tf 45 440 Td (LANGUAGE) Tj ET
+BT /F1 8 Tf 45 422 Td (English: Professional working proficiency) Tj ET
+BT /F2 11 Tf 45 402 Td (ENGINEERING FOCUS) Tj ET
+BT /F1 8 Tf 45 384 Td (Product-oriented frontend engineering | Reusable architecture | Enterprise UI systems) Tj ET
+BT /F1 8 Tf 45 370 Td (Data-heavy applications | API integration | Authentication & authorization | Testing) Tj ET
+BT /F1 8 Tf 45 356 Td (Production deployment | AI/LLM integration) Tj ET
+endstream
 endobj
 xref
 0 9
 0000000000 65535 f 
-0000000061 00000 n 
-0000000102 00000 n 
-0000000209 00000 n 
-0000000321 00000 n 
-0000000524 00000 n 
-0000000592 00000 n 
-0000000853 00000 n 
-0000000912 00000 n 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000128 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000000402 00000 n 
+0000003858 00000 n 
+0000003994 00000 n 
 trailer
-<<
-/ID 
-[<76db65dabbdcbf25b613684d247cffda><76db65dabbdcbf25b613684d247cffda>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 6 0 R
-/Root 5 0 R
-/Size 9
->>
+<< /Size 9 /Root 1 0 R >>
 startxref
-2609
+6783
 %%EOF
