@@ -22,7 +22,6 @@ function ProjectArchitectureList({
 }: {
     items: string[];
 }) {
-    const { t } = useTranslation();
     return (
         <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
             <CardContent className="p-6">
