@@ -1,14 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { motion } from "motion/react";\nimport { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import {
-    Card,
-    CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 import type { Project } from "@/data/projects";
 
@@ -16,9 +14,9 @@ interface ProjectCardProps {
     project: Project;
 }
 
-export default function ProjectCard({
-    project,
-}: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
+    const { t } = useTranslation();
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -88,7 +86,7 @@ export default function ProjectCard({
                                     "flex-1 rounded-xl bg-white text-black hover:bg-zinc-200",
                             })}
                         >
-                            Explore
+                            {t("projects.explore")}
                             <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
 
