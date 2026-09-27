@@ -1,4 +1,5 @@
-import { ArrowDown } from "lucide-react";\nimport { useTranslation } from "react-i18next";
+import { ArrowDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +10,8 @@ interface ProjectWorkflowProps {
 
 export default function ProjectWorkflow({
     project,
-}: ProjectWorkflowProps) {\n    const { t } = useTranslation();
+}: ProjectWorkflowProps) {
+    const { t } = useTranslation();
     const workflow = project.caseStudy?.workflow;
 
     if (!workflow?.length) {
