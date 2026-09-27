@@ -1,4 +1,4 @@
-import { Lightbulb, TriangleAlert } from "lucide-react";
+import { Lightbulb, TriangleAlert } from "lucide-react";\nimport { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +9,7 @@ interface ProjectProblemSolutionProps {
 
 export default function ProjectProblemSolution({
     project,
-}: ProjectProblemSolutionProps) {
+}: ProjectProblemSolutionProps) {\n    const { t } = useTranslation();
     const hasProblem = Boolean(project.problem);
     const hasSolution = Boolean(project.solution);
 
@@ -28,7 +28,7 @@ export default function ProjectProblemSolution({
                             </div>
 
                             <h2 className="text-xl font-semibold text-white">
-                                The Problem
+                                {t("projectDetails.problem")}
                             </h2>
                         </div>
 
@@ -48,7 +48,7 @@ export default function ProjectProblemSolution({
                             </div>
 
                             <h2 className="text-xl font-semibold text-white">
-                                The Approach
+                                {t("projectDetails.approach")}
                             </h2>
                         </div>
 
