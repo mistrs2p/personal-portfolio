@@ -1,8 +1,12 @@
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
+
 import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
+    const { t } = useTranslation();
+
     const featuredProjects = projects.filter(
         (project) => project.featured,
     );
@@ -17,16 +21,15 @@ export default function Projects() {
                     animate={{ opacity: 1, y: 0 }}
                 >
                     <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                        Selected work
+                        {t("projects.eyebrow")}
                     </p>
 
                     <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                        Projects & Case Studies
+                        {t("projects.title")}
                     </h1>
 
                     <p className="mt-5 max-w-2xl text-muted-foreground">
-                        A selection of projects covering frontend engineering,
-                        backend development, architecture, infrastructure, and AI.
+                        {t("projects.description")}
                     </p>
                 </motion.div>
 
