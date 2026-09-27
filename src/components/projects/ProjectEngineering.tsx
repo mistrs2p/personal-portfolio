@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
@@ -8,7 +9,8 @@ interface ProjectEngineeringProps {
 
 export default function ProjectEngineering({
     project,
-}: ProjectEngineeringProps) {\n    const { t } = useTranslation();
+}: ProjectEngineeringProps) {
+    const { t } = useTranslation();
     return (
         <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
             <CardContent className="p-6">
