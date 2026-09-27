@@ -156,6 +156,53 @@ const fa = {
         rendering: { title: "نمایش", description: "کنترل مناسب بر اساس metadata فیلد انتخاب می‌شود." },
       },
     },
+    systemArchitecture: {
+      eyebrow: "معماری سیستم",
+      pomodoro: {
+        description:
+          "یک معماری فول‌استک تفکیک‌شده با کلاینت وب مستقل، REST API، لایه احراز هویت و ذخیره‌سازی پایدار PostgreSQL.",
+        frontend: "فرانت‌اند Next.js",
+        backend: "API با NestJS",
+        database: "PostgreSQL",
+        secureSessions: {
+          title: "Session امن",
+          description:
+            "توکن‌های دسترسی JWT به‌جای state فرانت‌اند در cookieهای httpOnly نگهداری می‌شوند.",
+        },
+        persistentTimer: {
+          title: "تایمر پایدار",
+          description:
+            "وضعیت تایمر با timestamp مطلق پایان ذخیره می‌شود تا پس از refresh قابل بازیابی باشد.",
+        },
+        idempotentPersistence: {
+          title: "ذخیره‌سازی Idempotent",
+          description:
+            "شناسه session سمت کلاینت از ثبت تکراری sessionهای تمرکز جلوگیری می‌کند.",
+        },
+      },
+      ketabdaneh: {
+        description:
+          "یک Modular Monolith با کلاینت وب typed، قوانین کسب‌وکار و authorization تحت مالکیت بک‌اند، persistence رابطه‌ای و زیرساخت production-oriented برای background و edge.",
+        frontend: "فرانت‌اند Next.js",
+        backend: "بک‌اند FastAPI",
+        database: "PostgreSQL",
+        backgroundDelivery: {
+          title: "ارسال در پس‌زمینه",
+          description:
+            "Redis و ARQ ارسال اعلان‌ها را از مسیر requestهای کسب‌وکار جدا می‌کنند و retry محدود را مدیریت می‌کنند.",
+        },
+        hardenedEdge: {
+          title: "Edge امن",
+          description:
+            "Caddy در لبه عمومی قرار دارد و API، دیتابیس، Redis و metrics داخلی پشت شبکه container باقی می‌مانند.",
+        },
+        operationalReadiness: {
+          title: "آمادگی عملیاتی",
+          description:
+            "liveness، readiness، metrics، بررسی deployment و ابزار backup/restore به عملیات امن‌تر کمک می‌کنند.",
+        },
+      },
+    },
     links: { frontend: "فرانت‌اند", backend: "بک‌اند", liveDemo: "دموی آنلاین" },
     gallery: {
       empty: "اسکرین‌شات‌ها و دموهای پروژه به‌زودی اضافه می‌شوند.",
