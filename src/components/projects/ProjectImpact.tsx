@@ -5,7 +5,7 @@ import {
     RefreshCw,
 } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 // import type { Project } from "@/data/projects";
 
 // interface ProjectImpactProps {
@@ -42,16 +42,16 @@ const impactItems = [
 // export default function ProjectImpact({
 //     project,
 // }: ProjectImpactProps) {
-export default function ProjectImpact() {
+export default function ProjectImpact() {\n    const { t } = useTranslation();
     return (
         <section>
             <div className="mb-6">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                    Engineering Impact
+                    {t("projectDetails.impact.eyebrow")}
                 </p>
 
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                    Engineering decisions that shaped the platform
+                    {t("projectDetails.impact.title")}
                 </h2>
 
                 <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-400">
