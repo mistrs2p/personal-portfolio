@@ -4,7 +4,7 @@ import {
 
 import { SiGithub as Github } from "@icons-pack/react-simple-icons";
 
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";\nimport { useTranslation } from "react-i18next";
 import type { Project } from "@/data/projects";
 
 interface ProjectLinksProps {
@@ -13,7 +13,7 @@ interface ProjectLinksProps {
 
 export default function ProjectLinks({
     project,
-}: ProjectLinksProps) {
+}: ProjectLinksProps) {\n    const { t } = useTranslation();
     const hasRepositories = Boolean(
         project.repositories?.length,
     );
@@ -39,7 +39,7 @@ export default function ProjectLinks({
                     })}
                 >
                     <Github className="mr-2 h-4 w-4" />
-                    {repository.label}
+                    {repository.label === "Frontend" ? t("projectDetails.links.frontend") : repository.label === "Backend" ? t("projectDetails.links.backend") : repository.label}
                 </a>
             ))}
 
@@ -55,7 +55,7 @@ export default function ProjectLinks({
                     })}
                 >
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
+                    {t("projectDetails.links.liveDemo")}
                 </a>
             )}
         </>
