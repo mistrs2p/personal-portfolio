@@ -1,5 +1,5 @@
 import { ArrowLeft } from "lucide-react";
-import { Link, useParams } from "react-router";
+import { Link, useParams } from "react-router";\nimport { useTranslation } from "react-i18next";
 import { buttonVariants } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -22,7 +22,7 @@ import ProjectWorkflow from "@/components/projects/ProjectWorkflow";
 import ProjectFormArchitecture from "@/components/projects/ProjectFormArchitecture";
 import ProjectSystemArchitecture from "@/components/projects/ProjectSystemArchitecture";
 
-import { projects } from "@/data/projects";
+import { projects } from "@/data/projects";\nimport { getLocalizedProject } from "@/i18n/projectTranslations";
 
 export default function ProjectDetails() {
     const { slug } = useParams();
@@ -35,11 +35,11 @@ export default function ProjectDetails() {
         return (
             <div className="mx-auto max-w-3xl px-6 py-32 text-center">
                 <h1 className="text-3xl font-semibold text-white">
-                    Project not found
+                    {t("projectDetails.notFound.title")}
                 </h1>
 
                 <p className="mt-3 text-zinc-500">
-                    The project you're looking for doesn't exist.
+                    {t("projectDetails.notFound.description")}
                 </p>
 
                 <Link
@@ -49,7 +49,7 @@ export default function ProjectDetails() {
                     })}
                 >
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Projects
+                    {t("projectDetails.backToProjects")}
                 </Link>
             </div>
         );
@@ -61,44 +61,44 @@ export default function ProjectDetails() {
 
             <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
 
-                <ProjectHero project={project} />
+                <ProjectHero project={localizedProject} />
 
                 <div className="mt-10 grid gap-6 lg:grid-cols-2">
-                    <ProjectRole project={project} />
-                    <ProjectScope project={project} />
+                    <ProjectRole project={localizedProject} />
+                    <ProjectScope project={localizedProject} />
                 </div>
 
                 <div className="mt-6">
-                    <ProjectProblemSolution project={project} />
+                    <ProjectProblemSolution project={localizedProject} />
                 </div>
 
 
                 <div className="mt-14">
-                    <ProjectContext project={project} />
+                    <ProjectContext project={localizedProject} />
                 </div>
 
                 <div className="mt-14">
-                    <ProjectWorkflow project={project} />
+                    <ProjectWorkflow project={localizedProject} />
                 </div>
 
                 <div className="mt-14">
-                    <ProjectFormArchitecture project={project} />
+                    <ProjectFormArchitecture project={localizedProject} />
                 </div>
                 <div className="mt-14">
-                    <ProjectSystemArchitecture project={project} />
+                    <ProjectSystemArchitecture project={localizedProject} />
                 </div>
 
                 {project.slug === "neco" && (
                     <div className="mt-14">
-                        {/* <ProjectImpact project={project} /> */}
+                        {/* <ProjectImpact project={localizedProject} /> */}
                         <ProjectImpact />
                     </div>
                 )}
                 {project.screenshots.length > 0 && (
                     <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card sm:mt-14 sm:rounded-3xl">
                         <img
-                            src={project.screenshots[0].src}
-                            alt={project.screenshots[0].title}
+                            src={localizedProject.screenshots[0].src}
+                            alt={localizedProject.screenshots[0].title}
                             className="block w-full object-cover"
                         />
                     </div>
@@ -108,21 +108,13 @@ export default function ProjectDetails() {
                 <div className="mt-14">
                     <Tabs defaultValue="overview">
                         <TabsList className="w-full justify-start overflow-x-auto border border-border bg-muted/40 sm:w-auto">
-                            <TabsTrigger value="overview">
-                                Overview
-                            </TabsTrigger>
+                            <TabsTrigger value="overview">{t("projectDetails.tabs.overview")}</TabsTrigger>
 
-                            <TabsTrigger value="features">
-                                Features
-                            </TabsTrigger>
+                            <TabsTrigger value="features">{t("projectDetails.tabs.features")}</TabsTrigger>
 
-                            <TabsTrigger value="architecture">
-                                Architecture
-                            </TabsTrigger>
+                            <TabsTrigger value="architecture">{t("projectDetails.tabs.architecture")}</TabsTrigger>
 
-                            <TabsTrigger value="engineering">
-                                Engineering
-                            </TabsTrigger>
+                            <TabsTrigger value="engineering">{t("projectDetails.tabs.engineering")}</TabsTrigger>
                         </TabsList>
 
                         <TabsContent
@@ -130,7 +122,7 @@ export default function ProjectDetails() {
                             className="mt-8"
                         >
                             <ProjectOverview
-                                project={project}
+                                project={localizedProject}
                             />
                         </TabsContent>
 
@@ -139,7 +131,7 @@ export default function ProjectDetails() {
                             className="mt-8"
                         >
                             <ProjectFeatures
-                                project={project}
+                                project={localizedProject}
                             />
                         </TabsContent>
 
@@ -148,7 +140,7 @@ export default function ProjectDetails() {
                             className="mt-8"
                         >
                             <ProjectArchitecture
-                                project={project}
+                                project={localizedProject}
                             />
                         </TabsContent>
 
@@ -157,21 +149,21 @@ export default function ProjectDetails() {
                             className="mt-8"
                         >
                             <ProjectEngineering
-                                project={project}
+                                project={localizedProject}
                             />
                         </TabsContent>
                     </Tabs>
 
                     <div className="mt-14">
                         <ProjectChallenges
-                            project={project}
+                            project={localizedProject}
                         />
                     </div>
 
                     <div className="mt-14">
                         <ProjectGallery
-                            screenshots={project.screenshots}
-                            gifs={project.gifs}
+                            screenshots={localizedProject.screenshots}
+                            gifs={localizedProject.gifs}
                         />
                     </div>
                 </div>
