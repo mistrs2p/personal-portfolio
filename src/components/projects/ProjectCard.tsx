@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { motion } from "motion/react";
+import { motion } from "motion/react";\nimport { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 import { Badge } from "@/components/ui/badge";
@@ -98,7 +98,7 @@ export default function ProjectCard({
                                 target="_blank"
                                 rel="noreferrer"
                                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-muted text-muted-foreground transition hover:text-foreground"
-                                aria-label={`Open ${project.title} GitHub repository`}
+                                aria-label={t("projects.githubAria", { title: project.title })}
                             >
                                 <SiGithub className="h-4 w-4" />
                             </a>
