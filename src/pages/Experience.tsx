@@ -1,9 +1,12 @@
 import { BriefcaseBusiness, CalendarDays } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 import { experiences } from "@/data/experience";
 
 export default function Experience() {
+    const { t } = useTranslation();
+
     return (
         <div className="relative min-h-screen overflow-hidden">
             <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[650px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-[140px]" />
@@ -14,17 +17,15 @@ export default function Experience() {
                     animate={{ opacity: 1, y: 0 }}
                 >
                     <p className="text-sm font-medium uppercase tracking-[0.2em] text-violet-400">
-                        Career
+                        {t("experience.eyebrow")}
                     </p>
 
                     <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                        Professional Experience
+                        {t("experience.title")}
                     </h1>
 
                     <p className="mt-5 max-w-2xl text-zinc-500">
-                        A journey through web development, frontend engineering,
-                        backend development, and increasingly broader software
-                        engineering responsibilities.
+                        {t("experience.description")}
                     </p>
                 </motion.div>
 
@@ -34,7 +35,7 @@ export default function Experience() {
                     <div className="space-y-8">
                         {experiences.map((experience, index) => (
                             <motion.article
-                                key={`${experience.company}-${experience.period}`}
+                                key={experience.id}
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.2 }}
@@ -47,7 +48,7 @@ export default function Experience() {
                                     <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                                         <div>
                                             <h2 className="text-xl font-semibold text-white">
-                                                {experience.role}
+                                                {t(`experience.roles.${experience.roleKey}`)}
                                             </h2>
 
                                             <div className="mt-2 flex items-center gap-2 text-sm text-blue-400">
@@ -63,13 +64,13 @@ export default function Experience() {
                                     </div>
 
                                     <ul className="mt-6 space-y-3">
-                                        {experience.highlights.map((highlight) => (
+                                        {experience.highlightKeys.map((key) => (
                                             <li
-                                                key={highlight}
+                                                key={key}
                                                 className="flex gap-3 text-sm leading-6 text-zinc-500"
                                             >
                                                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400/70" />
-                                                <span>{highlight}</span>
+                                                <span>{t(`experience.highlights.${key}`)}</span>
                                             </li>
                                         ))}
                                     </ul>
