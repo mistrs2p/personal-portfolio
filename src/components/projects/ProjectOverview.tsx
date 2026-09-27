@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 import { Badge } from "@/components/ui/badge";
 
 import type { Project } from "@/data/projects";
@@ -9,13 +9,13 @@ interface ProjectOverviewProps {
 
 export default function ProjectOverview({
     project,
-}: ProjectOverviewProps) {
+}: ProjectOverviewProps) {\n    const { t } = useTranslation();
     return (
         <div className="grid gap-6 lg:grid-cols-2">
             <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
                 <CardContent className="p-6">
                     <h2 className="text-xl font-semibold text-white">
-                        Project Overview
+                        {t("projectDetails.overview.title")}
                     </h2>
 
                     <p className="mt-4 leading-7 text-zinc-500">
@@ -27,7 +27,7 @@ export default function ProjectOverview({
             <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
                 <CardContent className="p-6">
                     <h2 className="text-xl font-semibold text-white">
-                        Status
+                        {t("projectDetails.overview.status")}
                     </h2>
 
                     <div className="mt-4">
