@@ -1,4 +1,5 @@
-import { Layers3 } from "lucide-react";\nimport { useTranslation } from "react-i18next";
+import { Layers3 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +10,8 @@ interface ProjectScopeProps {
 
 export default function ProjectScope({
     project,
-}: ProjectScopeProps) {\n    const { t } = useTranslation();
+}: ProjectScopeProps) {
+    const { t } = useTranslation();
     if (!project.scope) {
         return null;
     }
