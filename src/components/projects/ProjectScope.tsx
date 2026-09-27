@@ -1,4 +1,4 @@
-import { Layers3 } from "lucide-react";
+import { Layers3 } from "lucide-react";\nimport { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +9,7 @@ interface ProjectScopeProps {
 
 export default function ProjectScope({
     project,
-}: ProjectScopeProps) {
+}: ProjectScopeProps) {\n    const { t } = useTranslation();
     if (!project.scope) {
         return null;
     }
@@ -23,7 +23,7 @@ export default function ProjectScope({
                     </div>
 
                     <h2 className="text-xl font-semibold text-white">
-                        Product Scope
+                        {t("projectDetails.scope")}
                     </h2>
                 </div>
 
