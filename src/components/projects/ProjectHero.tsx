@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { motion } from "motion/react";
-import { Link } from "react-router";\nimport { useTranslation } from "react-i18next";
+import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/data/projects";
@@ -12,7 +13,8 @@ interface ProjectHeroProps {
 
 export default function ProjectHero({
     project,
-}: ProjectHeroProps) {\n    const { t } = useTranslation();
+}: ProjectHeroProps) {
+    const { t } = useTranslation();
     return (
         <>
             <Link
