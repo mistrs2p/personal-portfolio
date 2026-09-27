@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
@@ -8,10 +8,10 @@ interface ProjectFeaturesProps {
 
 export default function ProjectFeatures({
     project,
-}: ProjectFeaturesProps) {
+}: ProjectFeaturesProps) {\n    const { t } = useTranslation();
     return (
         <ProjectList
-            title="Key Features"
+            title={t("projectDetails.features")}
             items={project.features}
         />
     );
@@ -44,7 +44,7 @@ function ProjectList({
                     </div>
                 ) : (
                     <p className="mt-5 text-sm text-zinc-600">
-                        Details will be added soon.
+                        {t("projectDetails.detailsSoon")}
                     </p>
                 )}
             </CardContent>
