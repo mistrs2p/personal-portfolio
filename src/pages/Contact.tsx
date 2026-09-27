@@ -1,4 +1,5 @@
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { SiGithub as Github } from "@icons-pack/react-simple-icons";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { buttonVariants } from "@/components/ui/button";
