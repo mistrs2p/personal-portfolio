@@ -1,61 +1,45 @@
 export interface ExperienceItem {
+  id: string;
   company: string;
-  role: string;
   period: string;
-  description?: string;
-  highlights: string[];
+  roleKey: string;
+  highlightKeys: string[];
 }
 
 export const experiences: ExperienceItem[] = [
   {
+    id: "neco",
     company: "Neco Industry Management Company",
-    role: "Frontend Developer",
     period: "2020 – Present",
-    highlights: [
-      "Develop and maintain web applications.",
-      "Build user interfaces and implement new features.",
-      "Collaborate on technical analysis, development, and troubleshooting.",
-      "Participate in technical meetings, planning, and knowledge sharing.",
-    ],
+    roleKey: "neco",
+    highlightKeys: ["neco.1", "neco.2", "neco.3", "neco.4"],
   },
   {
+    id: "risloo",
     company: "Risloo",
-    role: "Backend / Database Developer",
     period: "2023 – 2024",
-    highlights: [
-      "Develop backend services using Node.js.",
-      "Design and develop APIs.",
-      "Work with databases and implement data access logic.",
-      "Collaborate on the development and maintenance of software services.",
-    ],
+    roleKey: "risloo",
+    highlightKeys: ["risloo.1", "risloo.2", "risloo.3", "risloo.4"],
   },
   {
+    id: "orchid",
     company: "Orchid Pharmed / Bornafit Dr. Kaviani",
-    role: "Frontend Developer",
     period: "2019 – 2020",
-    highlights: [
-      "Develop user interfaces using Vue.js and Nuxt.js.",
-      "Implement product pages and features.",
-      "Collaborate in frontend development and improvement.",
-    ],
+    roleKey: "orchid",
+    highlightKeys: ["orchid.1", "orchid.2", "orchid.3"],
   },
   {
+    id: "majazeh",
     company: "Majazeh Company",
-    role: "Web Designer / JavaScript Developer",
     period: "2018 – 2019",
-    highlights: [
-      "Design and develop web pages.",
-      "Implement interactive features using JavaScript.",
-      "Develop and improve user interfaces.",
-    ],
+    roleKey: "majazeh",
+    highlightKeys: ["majazeh.1", "majazeh.2", "majazeh.3"],
   },
   {
+    id: "ermile",
     company: "Ermile Company",
-    role: "Web Development / IT Training",
     period: "2016 – 2018",
-    highlights: [
-      "Provide practical training in HTML, CSS, JavaScript, Photoshop, and ICDL.",
-      "Gain practical experience in web development.",
-    ],
+    roleKey: "ermile",
+    highlightKeys: ["ermile.1", "ermile.2"],
   },
 ];
