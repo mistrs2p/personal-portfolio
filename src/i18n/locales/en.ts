@@ -116,6 +116,14 @@ const en = {
       },
     },
   },
+  projects: {
+    eyebrow: "Selected work",
+    title: "Projects & Case Studies",
+    description:
+      "A selection of projects covering frontend engineering, backend development, architecture, infrastructure, and AI.",
+    explore: "Explore",
+    githubAria: "Open {{title}} GitHub repository",
+  },
   experience: {
     eyebrow: "Career",
     title: "Professional Experience",
