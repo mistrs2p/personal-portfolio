@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 
 import type { Project } from "@/data/projects";
 
@@ -8,12 +8,12 @@ interface ProjectEngineeringProps {
 
 export default function ProjectEngineering({
     project,
-}: ProjectEngineeringProps) {
+}: ProjectEngineeringProps) {\n    const { t } = useTranslation();
     return (
         <Card className="rounded-3xl border-white/10 bg-zinc-950/60">
             <CardContent className="p-6">
                 <h2 className="text-xl font-semibold text-white">
-                    Engineering Decisions
+                    {t("projectDetails.engineering")}
                 </h2>
 
                 {project.engineeringDecisions.length > 0 ? (
@@ -31,7 +31,7 @@ export default function ProjectEngineering({
                     </div>
                 ) : (
                     <p className="mt-5 text-sm text-zinc-600">
-                        Details will be added soon.
+                        {t("projectDetails.detailsSoon")}
                     </p>
                 )}
             </CardContent>
