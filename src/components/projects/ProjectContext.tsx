@@ -1,4 +1,5 @@
-import { BriefcaseBusiness } from "lucide-react";\nimport { useTranslation } from "react-i18next";
+import { BriefcaseBusiness } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +10,8 @@ interface ProjectContextProps {
 
 export default function ProjectContext({
     project,
-}: ProjectContextProps) {\n    const { t } = useTranslation();
+}: ProjectContextProps) {
+    const { t } = useTranslation();
     if (!project.caseStudy?.context) {
         return null;
     }
