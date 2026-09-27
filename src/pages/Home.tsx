@@ -14,9 +14,12 @@ import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { SiGithub } from "@icons-pack/react-simple-icons";
+import { useTranslation } from "react-i18next";
+
 const featuredProjects = projects.filter(
     (project) => project.featured,
 );
+
 const techStack = [
     "React",
     "Next.js",
@@ -29,34 +32,25 @@ const techStack = [
     "AI / LLM",
 ];
 
-const capabilities = [
-    {
-        icon: Layers3,
-        title: "Frontend Engineering",
-        description:
-            "Modern, modular and maintainable interfaces with React, Next.js and TypeScript.",
-    },
-    {
-        icon: Server,
-        title: "Backend Development",
-        description:
-            "API-driven services using Node.js, NestJS, Express.js and FastAPI.",
-    },
-    {
-        icon: Database,
-        title: "Data & Architecture",
-        description:
-            "Working with SQL and NoSQL databases and designing maintainable application architectures.",
-    },
-    {
-        icon: BrainCircuit,
-        title: "AI Engineering",
-        description:
-            "Exploring LLM applications, RAG, embeddings, vector search and AI integration.",
-    },
-];
+const capabilityKeys = [
+    { key: "frontend", icon: Layers3 },
+    { key: "backend", icon: Server },
+    { key: "data", icon: Database },
+    { key: "ai", icon: BrainCircuit },
+] as const;
+
+const principleKeys = [
+    "maintainability",
+    "scalability",
+    "reusableArchitecture",
+    "performance",
+    "productionReadiness",
+    "continuousLearning",
+] as const;
 
 export default function Home() {
+    const { t } = useTranslation();
+
     return (
         <div className="relative overflow-hidden">
             {/* Background grid */}
@@ -93,28 +87,27 @@ export default function Home() {
                             <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-background/10 via-transparent to-transparent" />
                         </div>
                     </motion.div>
+
                     <div>
                         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-zinc-400 backdrop-blur">
                             <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-                            Building & learning continuously
+                            {t("home.status")}
                         </div>
 
                         <div className="max-w-4xl">
                             <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-blue-400">
-                                Senior Frontend / Full-Stack Developer
+                                {t("home.eyebrow")}
                             </p>
 
                             <h1 className="text-5xl font-semibold tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
-                                I build products
+                                {t("home.heroTitle")}
                                 <span className="block bg-linear-to-r from-foreground via-blue-400 to-violet-500 bg-clip-text text-transparent">
-                                    from idea to production.
+                                    {t("home.heroTitleAccent")}
                                 </span>
                             </h1>
 
                             <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                                I work across frontend, backend, databases, infrastructure,
-                                deployment, and AI-powered applications — turning complex
-                                requirements into practical software.
+                                {t("home.heroDescription")}
                             </p>
                         </div>
 
@@ -127,7 +120,7 @@ export default function Home() {
                                         "rounded-xl bg-white text-black hover:bg-zinc-200",
                                 })}
                             >
-                                Explore Projects
+                                {t("home.exploreProjects")}
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
 
@@ -140,7 +133,7 @@ export default function Home() {
                                         "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                                 })}
                             >
-                                View Resume
+                                {t("home.viewResume")}
                             </Link>
 
                             <a
@@ -155,7 +148,7 @@ export default function Home() {
                                 })}
                             >
                                 <SiGithub className="mr-2 h-4 w-4" />
-                                GitHub
+                                {t("home.github")}
                             </a>
                         </div>
 
@@ -172,7 +165,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* Hero Visual */}
+                    {/* Engineering Stack */}
                     <div className="relative mx-auto w-full max-w-md">
                         <div className="absolute -inset-8 rounded-[40px] bg-linear-to-br from-blue-500/15 via-violet-500/10 to-transparent blur-3xl" />
 
@@ -180,36 +173,32 @@ export default function Home() {
                             <div className="rounded-3xl border border-border bg-background p-5">
                                 <div className="mb-5 flex items-center justify-between">
                                     <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                                        Engineering Stack
+                                        {t("home.engineeringStack")}
                                     </span>
 
                                     <Sparkles className="h-4 w-4 text-violet-400" />
                                 </div>
 
                                 <div className="space-y-3">
-                                    {capabilities.map((item) => {
-                                        const Icon = item.icon;
-
-                                        return (
-                                            <div
-                                                key={item.title}
-                                                className="group flex gap-4 rounded-2xl border border-border/70 bg-muted p-4 transition hover:border-foreground/20 hover:bg-secondary"
-                                            >
-                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-blue-500">
-                                                    <Icon className="h-5 w-5" />
-                                                </div>
-
-                                                <div>
-                                                    <h3 className="text-sm font-semibold text-foreground">
-                                                        {item.title}
-                                                    </h3>
-                                                    <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                                                        {item.description}
-                                                    </p>
-                                                </div>
+                                    {capabilityKeys.map(({ key, icon: Icon }) => (
+                                        <div
+                                            key={key}
+                                            className="group flex gap-4 rounded-2xl border border-border/70 bg-muted p-4 transition hover:border-foreground/20 hover:bg-secondary"
+                                        >
+                                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-blue-500">
+                                                <Icon className="h-5 w-5" />
                                             </div>
-                                        );
-                                    })}
+
+                                            <div>
+                                                <h3 className="text-sm font-semibold text-foreground">
+                                                    {t(`home.capabilities.${key}.title`)}
+                                                </h3>
+                                                <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                                                    {t(`home.capabilities.${key}.description`)}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -227,16 +216,15 @@ export default function Home() {
                     <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
                         <div>
                             <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                                Selected work
+                                {t("home.selectedWork")}
                             </p>
 
                             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                                Projects worth exploring
+                                {t("home.projectsTitle")}
                             </h2>
 
                             <p className="mt-4 max-w-2xl text-zinc-500">
-                                A selection of projects that demonstrate frontend engineering,
-                                backend development, architecture, and AI integration.
+                                {t("home.projectsDescription")}
                             </p>
                         </div>
 
@@ -249,7 +237,7 @@ export default function Home() {
                                     "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                             })}
                         >
-                            View All Projects
+                            {t("home.viewAllProjects")}
                         </Link>
                     </div>
 
@@ -269,36 +257,26 @@ export default function Home() {
                 <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
                     <div>
                         <p className="text-sm font-medium uppercase tracking-[0.2em] text-violet-400">
-                            How I work
+                            {t("home.howIWork")}
                         </p>
 
                         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground">
-                            Engineering beyond the UI.
+                            {t("home.engineeringBeyondUi")}
                         </h2>
                     </div>
 
                     <div className="max-w-3xl">
                         <p className="text-lg leading-8 text-muted-foreground">
-                            My work goes beyond implementing interfaces. I enjoy
-                            understanding the problem, designing the architecture,
-                            connecting the layers, and taking software all the way to
-                            production.
+                            {t("home.positioning")}
                         </p>
 
                         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                            {[
-                                "Maintainability",
-                                "Scalability",
-                                "Reusable Architecture",
-                                "Performance",
-                                "Production Readiness",
-                                "Continuous Learning",
-                            ].map((item) => (
+                            {principleKeys.map((key) => (
                                 <div
-                                    key={item}
+                                    key={key}
                                     className="rounded-2xl border border-border bg-card px-5 py-4 text-sm text-foreground"
                                 >
-                                    {item}
+                                    {t(`home.principles.${key}`)}
                                 </div>
                             ))}
                         </div>
@@ -313,16 +291,15 @@ export default function Home() {
                         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
                             <div>
                                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                                    Currently exploring
+                                    {t("home.currentFocus")}
                                 </p>
 
                                 <h2 className="mt-3 text-3xl font-semibold text-foreground">
-                                    AI Engineering & intelligent applications
+                                    {t("home.aiTitle")}
                                 </h2>
 
                                 <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-                                    Exploring LLM applications, RAG, embeddings, vector search,
-                                    and practical AI integration into real software products.
+                                    {t("home.aiDescription")}
                                 </p>
                             </div>
 
@@ -335,7 +312,7 @@ export default function Home() {
                                         "rounded-xl border-border bg-muted text-foreground hover:bg-secondary",
                                 })}
                             >
-                                Explore AI work
+                                {t("home.exploreAiWork")}
                                 <ArrowRight className="ml-2 h-4 w-4" />
                             </Link>
                         </div>
