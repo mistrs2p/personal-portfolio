@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight, ImageOff, X } from "lucide-react";
-import { motion } from "motion/react";
+import { motion } from "motion/react";\nimport { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 interface ProjectGalleryProps {
@@ -11,7 +11,7 @@ interface ProjectGalleryProps {
     gifs: string[];
 }
 
-export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProps) {
+export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProps) {\n    const { t } = useTranslation();
     const hasMedia = screenshots.length > 0 || gifs.length > 0;
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const activeScreenshot = activeIndex !== null ? screenshots[activeIndex] : null;
@@ -49,7 +49,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
             <div className="rounded-3xl border border-dashed border-border bg-muted/40 p-12 text-center">
                 <ImageOff className="mx-auto h-8 w-8 text-muted-foreground" />
                 <p className="mt-4 text-sm text-muted-foreground">
-                    Project screenshots and demos will be added soon.
+                    {t("projectDetails.gallery.empty")}
                 </p>
             </div>
         );
@@ -63,14 +63,14 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                         <div className="mb-5 flex items-end justify-between gap-4">
                             <div>
                                 <h3 className="text-xl font-semibold text-foreground">
-                                    Screenshots
+                                    {t("projectDetails.gallery.title")}
                                 </h3>
                                 <p className="mt-1 text-sm text-muted-foreground">
-                                    Click an image to view it full size.
+                                    {t("projectDetails.gallery.description")}
                                 </p>
                             </div>
                             <span className="shrink-0 text-xs text-muted-foreground">
-                                {screenshots.length} {screenshots.length === 1 ? "image" : "images"}
+                                {screenshots.length} {screenshots.length === 1 ? t("projectDetails.gallery.image") : t("projectDetails.gallery.images")}
                             </span>
                         </div>
 
@@ -96,7 +96,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                         />
                                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
                                         <div className="pointer-events-none absolute bottom-4 left-4 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 text-xs font-medium text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
-                                            View full size
+                                            {t("projectDetails.gallery.viewFullSize")}
                                         </div>
                                     </div>
 
@@ -118,7 +118,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
 
                 {gifs.length > 0 && (
                     <div>
-                        <h3 className="mb-5 text-xl font-semibold text-foreground">Demo</h3>
+                        <h3 className="mb-5 text-xl font-semibold text-foreground">{t("projectDetails.gallery.demo")}</h3>
                         <div className="space-y-5">
                             {gifs.map((gif) => (
                                 <img
@@ -157,7 +157,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                 type="button"
                                 onClick={() => setActiveIndex(null)}
                                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/20"
-                                aria-label="Close gallery"
+                                aria-label={t("projectDetails.gallery.close")}
                             >
                                 <X className="h-5 w-5" />
                             </button>
@@ -181,7 +181,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                             )
                                         }
                                         className="absolute left-2 top-1/2 flex h-10 w-10 sm:left-3 sm:h-11 sm:w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white backdrop-blur transition hover:bg-black/75"
-                                        aria-label="Previous image"
+                                        aria-label={t("projectDetails.gallery.previous")}
                                     >
                                         <ChevronLeft className="h-6 w-6" />
                                     </button>
@@ -193,7 +193,7 @@ export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProp
                                             )
                                         }
                                         className="absolute right-2 top-1/2 flex h-10 w-10 sm:right-3 sm:h-11 sm:w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/55 text-white backdrop-blur transition hover:bg-black/75"
-                                        aria-label="Next image"
+                                        aria-label={t("projectDetails.gallery.next")}
                                     >
                                         <ChevronRight className="h-6 w-6" />
                                     </button>
