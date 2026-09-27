@@ -7,7 +7,8 @@ import {
     Send,
 } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import type { Project } from "@/data/projects";
 
 interface ProjectFormArchitectureProps {
@@ -25,7 +26,8 @@ const icons = [
 
 export default function ProjectFormArchitecture({
     project,
-}: ProjectFormArchitectureProps) {\n    const { t } = useTranslation();
+}: ProjectFormArchitectureProps) {
+    const { t } = useTranslation();
     const architecture = project.caseStudy?.formArchitecture;
 
     if (!architecture) {
