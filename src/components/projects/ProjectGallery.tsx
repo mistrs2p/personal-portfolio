@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronRight, ImageOff, X } from "lucide-react";
-import { motion } from "motion/react";\nimport { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 interface ProjectGalleryProps {
@@ -11,7 +12,8 @@ interface ProjectGalleryProps {
     gifs: string[];
 }
 
-export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProps) {\n    const { t } = useTranslation();
+export default function ProjectGallery({ screenshots, gifs }: ProjectGalleryProps) {
+    const { t } = useTranslation();
     const hasMedia = screenshots.length > 0 || gifs.length > 0;
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const activeScreenshot = activeIndex !== null ? screenshots[activeIndex] : null;
