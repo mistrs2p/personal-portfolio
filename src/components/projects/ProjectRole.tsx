@@ -1,4 +1,4 @@
-import { UserRound } from "lucide-react";
+import { UserRound } from "lucide-react";\nimport { useTranslation } from "react-i18next";
 
 import { Card, CardContent } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
@@ -9,7 +9,7 @@ interface ProjectRoleProps {
 
 export default function ProjectRole({
     project,
-}: ProjectRoleProps) {
+}: ProjectRoleProps) {\n    const { t } = useTranslation();
     if (!project.role) {
         return null;
     }
@@ -23,7 +23,7 @@ export default function ProjectRole({
                     </div>
 
                     <h2 className="text-xl font-semibold text-white">
-                        My Role
+                        {t("projectDetails.role")}
                     </h2>
                 </div>
 
