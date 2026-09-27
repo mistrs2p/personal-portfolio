@@ -156,6 +156,53 @@ const en = {
         rendering: { title: "Rendering", description: "The correct control is selected from field metadata." },
       },
     },
+    systemArchitecture: {
+      eyebrow: "System Architecture",
+      pomodoro: {
+        description:
+          "A separated full-stack architecture with a dedicated web client, REST API, authentication layer, and persistent PostgreSQL storage.",
+        frontend: "Next.js Frontend",
+        backend: "NestJS API",
+        database: "PostgreSQL",
+        secureSessions: {
+          title: "Secure Sessions",
+          description:
+            "JWT access tokens are kept in httpOnly cookies rather than frontend state.",
+        },
+        persistentTimer: {
+          title: "Persistent Timer",
+          description:
+            "Timer state uses an absolute end timestamp to survive page refreshes.",
+        },
+        idempotentPersistence: {
+          title: "Idempotent Persistence",
+          description:
+            "Client session identifiers prevent duplicate focus-session writes.",
+        },
+      },
+      ketabdaneh: {
+        description:
+          "A modular monolith with a typed web client, backend-owned business rules and authorization, relational persistence, and production-oriented background and edge infrastructure.",
+        frontend: "Next.js Frontend",
+        backend: "FastAPI Backend",
+        database: "PostgreSQL",
+        backgroundDelivery: {
+          title: "Background Delivery",
+          description:
+            "Redis and ARQ move notification delivery out of business request paths with bounded retries.",
+        },
+        hardenedEdge: {
+          title: "Hardened Edge",
+          description:
+            "Caddy is the public edge while API, database, Redis, and internal metrics stay behind the container network.",
+        },
+        operationalReadiness: {
+          title: "Operational Readiness",
+          description:
+            "Liveness, readiness, metrics, deployment verification, and backup/restore tooling support safer operations.",
+        },
+      },
+    },
     links: { frontend: "Frontend", backend: "Backend", liveDemo: "Live Demo" },
     gallery: {
       empty: "Project screenshots and demos will be added soon.",
