@@ -7,7 +7,7 @@ import {
     Send,
 } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";\nimport { useTranslation } from "react-i18next";
 import type { Project } from "@/data/projects";
 
 interface ProjectFormArchitectureProps {
@@ -25,7 +25,7 @@ const icons = [
 
 export default function ProjectFormArchitecture({
     project,
-}: ProjectFormArchitectureProps) {
+}: ProjectFormArchitectureProps) {\n    const { t } = useTranslation();
     const architecture = project.caseStudy?.formArchitecture;
 
     if (!architecture) {
@@ -36,11 +36,11 @@ export default function ProjectFormArchitecture({
         <section>
             <div className="mb-6">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
-                    Dynamic Form Architecture
+                    {t("projectDetails.formArchitecture.eyebrow")}
                 </p>
 
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                    Metadata-driven enterprise forms
+                    {t("projectDetails.formArchitecture.title")}
                 </h2>
 
                 <p className="mt-3 max-w-4xl text-sm leading-7 text-zinc-400">
@@ -49,7 +49,7 @@ export default function ProjectFormArchitecture({
             </div>
 
             <div className="space-y-6">
-                {/* Form Lifecycle */}
+                {/* {t("projectDetails.formArchitecture.lifecycle")} */}
                 <Card className="mx-auto w-full max-w-4xl rounded-3xl border-white/10 bg-zinc-950/60">
                     <CardContent className="p-6 sm:p-8">
                         <div className="mb-6">
@@ -99,7 +99,7 @@ export default function ProjectFormArchitecture({
                     </CardContent>
                 </Card>
 
-                {/* Capabilities */}
+                {/* {t("projectDetails.formArchitecture.capabilities")} */}
                 <Card className="mx-auto w-full max-w-4xl rounded-3xl border-white/10 bg-zinc-950/60">
                     <CardContent className="p-6 sm:p-7">
                         <div className="text-center">
@@ -132,23 +132,23 @@ export default function ProjectFormArchitecture({
 
             <div className="mt-6 grid gap-4 md:grid-cols-4">
                 <ArchitectureRule
-                    title="Required"
-                    description="Field requirements are enforced in the form lifecycle."
+                    title={t("projectDetails.formArchitecture.rules.required.title")}
+                    description={t("projectDetails.formArchitecture.rules.required.description")}
                 />
 
                 <ArchitectureRule
-                    title="Readonly"
-                    description="Field mutability is controlled from metadata and context."
+                    title={t("projectDetails.formArchitecture.rules.readonly.title")}
+                    description={t("projectDetails.formArchitecture.rules.readonly.description")}
                 />
 
                 <ArchitectureRule
-                    title="Validation"
-                    description="Validation rules adapt to field and user context."
+                    title={t("projectDetails.formArchitecture.rules.validation.title")}
+                    description={t("projectDetails.formArchitecture.rules.validation.description")}
                 />
 
                 <ArchitectureRule
-                    title="Rendering"
-                    description="The correct control is selected from field metadata."
+                    title={t("projectDetails.formArchitecture.rules.rendering.title")}
+                    description={t("projectDetails.formArchitecture.rules.rendering.description")}
                 />
             </div>
         </section>
