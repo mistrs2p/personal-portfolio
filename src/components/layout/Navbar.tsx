@@ -6,17 +6,20 @@ import {
 import ThemeToggle from "@/components/shared/ThemeToggle";
 import { NavLink } from "react-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 
 const links = [
-    { label: "About", to: "/about" },
-    { label: "Experience", to: "/experience" },
-    { label: "Projects", to: "/projects" },
-    { label: "Resume", to: "/resume" },
-    { label: "Contact", to: "/contact" },
-];
+    { key: "about", to: "/about" },
+    { key: "experience", to: "/experience" },
+    { key: "projects", to: "/projects" },
+    { key: "resume", to: "/resume" },
+    { key: "contact", to: "/contact" },
+] as const;
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-xl">
@@ -62,7 +65,7 @@ export default function Navbar() {
                                 ].join(" ")
                             }
                         >
-                            {link.label}
+                            {t(`nav.${link.key}`)}
                         </NavLink>
                     ))}
                 </nav>
@@ -70,6 +73,7 @@ export default function Navbar() {
                 {/* Desktop Social */}
                 <div className="hidden items-center gap-2 md:flex">
                     <ThemeToggle />
+                    <LanguageSwitcher />
                     <a
                         href="https://github.com/mistrs2p"
                         target="_blank"
@@ -123,12 +127,13 @@ export default function Navbar() {
                                     ].join(" ")
                                 }
                             >
-                                {link.label}
+                                {t(`nav.${link.key}`)}
                             </NavLink>
                         ))}
                     </nav>
 
-                    <div className="mt-4 flex gap-2 border-t border-border pt-4">
+                    <div className="mt-4 flex items-center gap-2 border-t border-border pt-4">
+                        <LanguageSwitcher />
                         <a
                             href="https://github.com/mistrs2p"
                             target="_blank"
